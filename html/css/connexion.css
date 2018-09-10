@@ -132,5 +132,11 @@ h1{
 	font-family: 'Pacifico', cursive;
 }
 #title{
+	font-size: 25px;
 	text-align: center;
+	position: relative;
+}
+#profile{
+	margin-right: 30px;
+	text-align: right;
 }

@@ -23,5 +23,7 @@
     </head>
     <body>
         <?php include_once "header.php"?>
+        <div class="Events">Mes Events</div>
+        <div class="Events">Creer Events</div>
     </body>
 </html>
