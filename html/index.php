@@ -63,7 +63,7 @@
                                 <div class="col-10">
                                     <p class="decouverte">Découvrez ce qu'il se passe <br>dans votre region en temps réel</p>
                                     <p class="rejoindre">Rejoignez Patatoïde dès maintenant.</p>
-                                    <form method="post" id="formconnexion" action="inscription.php">
+                                    <form method="post" id="formconnexion" action="inscription/index.php">
                                         <button type="submit" class="btn btn-primary" id="boutoninscr"><span>S'inscrire</span></button>
                                     </form>
                                 </div>
