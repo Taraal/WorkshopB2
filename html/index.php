@@ -7,7 +7,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="author" content="workshop">
-    <link rel="icon" href="fav.png"/>
+    <link rel="icon" href="../medias/fav.png"/>
 
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
@@ -21,7 +21,7 @@
 
 
     <!-- CSS -->
-    <link rel="stylesheet" type="text/css" href="connexion.css">
+    <link rel="stylesheet" type="text/css" href="../css/connexion.css">
 
     <title>Workshop</title>
 
@@ -32,7 +32,7 @@
         <div class="no-gutter">
             <div class="row">
                 <div class="col-6" id="imageconnex">
-                    <img src="connexion.png" class="image">
+                    <img src="../medias/connexion.png" class="image">
                 </div>                
                 <div class="col-6" id="droite">
                     <h1>Patatoïde</h1>
@@ -58,7 +58,7 @@
                         <div class="no-gutter">
                             <div class="row">
                                 <div class="col-2">
-                                    <img src="patate.png" class="image2">
+                                    <img src="../medias/patate.png" class="image2">
                                 </div>
                                 <div class="col-10">
                                     <p class="decouverte">Découvrez ce qu'il se passe <br>dans votre region en temps réel</p>
