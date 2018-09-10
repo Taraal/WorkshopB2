@@ -45,12 +45,20 @@
                     </div>
 
                     <div class="infosite">
-                        <p class="decouverte">Découvrez ce qu'il se passe <br>dans votre region en temps réel</p>
-                        <p class="rejoindre">Rejoignez Patatoïde dès maintenant.</p>
-                        <form method="post" id="formconnexion" action="inscription.php">
-                            <button type="submit" class="btn btn-primary" id="boutoninscr"><span>S'inscrire</span></button>
-                        </form>
-
+                        <div class="no-gutter">
+                            <div class="row">
+                                <div class="col-2">
+                                    <img src="patate.png" class="image2">
+                                </div>
+                                <div class="col-10">
+                                    <p class="decouverte">Découvrez ce qu'il se passe <br>dans votre region en temps réel</p>
+                                    <p class="rejoindre">Rejoignez Patatoïde dès maintenant.</p>
+                                    <form method="post" id="formconnexion" action="inscription.php">
+                                        <button type="submit" class="btn btn-primary" id="boutoninscr"><span>S'inscrire</span></button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
 
