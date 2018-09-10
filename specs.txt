@@ -1,0 +1,33 @@
+//SPECS SITE WORKSHOP
+
+Se loger / Se restaurer / Faire du sport / Sortir
+
+Pages : 
+	- Accueil : 
+		- Crée un compte / Se connecter
+	- Profil : 
+		- Consulter le profil des autres
+		- Modifier son profil : 
+			- Bio
+			- Liste des évènements créés
+			- Groupes auxquels on appartient (privés) ?
+		- Envoyer un message (?)
+		- 
+	- Dashboard : 
+		- Liste des évènements qui nous intéressent (épinglés)
+		- Liste de nos évènements (épinglés)
+		- Liens pour explorer les évènements par thème (covoiturage/Coworking/sport/balade)
+		- Créer un nouvel évènement : 
+			- Choix du thème, nom, date, détails
+		- Calendrier + carte géographique des évènements
+		- Filtrer et rechercher les évènements par tags
+	Evènement : 
+		- Infos sur l'évènement : 
+			- Thème
+			- Nom, créateur, date/heure, lieu, détails
+			- Invités
+			- Commentaires
+			- Tags / Hashtags
+	Page Thème / Catégories : 
+		- Liste des évènements (tri par date ?)
+		- Créer un nouvel évènement
