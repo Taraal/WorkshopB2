@@ -21,7 +21,7 @@
 
 
     <!-- CSS -->
-    <link rel="stylesheet" type="text/css" href="../css/connexion.css">
+    <link rel="stylesheet" type="text/css" href="css/connexion.css">
 
     <title>Workshop</title>
 
@@ -32,7 +32,7 @@
         <div class="no-gutter">
             <div class="row">
                 <div class="col-6" id="imageconnex">
-                    <img src="../medias/connexion.png" class="image">
+                    <img src="medias/connexion.png" class="image">
                 </div>                
                 <div class="col-6" id="droite">
                     <h1>Patatoïde</h1>
@@ -58,7 +58,7 @@
                         <div class="no-gutter">
                             <div class="row">
                                 <div class="col-2">
-                                    <img src="../medias/patate.png" class="image2">
+                                    <img src="medias/patate.png" class="image2">
                                 </div>
                                 <div class="col-10">
                                     <p class="decouverte">Découvrez ce qu'il se passe <br>dans votre region en temps réel</p>
