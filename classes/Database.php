@@ -21,15 +21,26 @@ class database
         return $db;
     }
 
-    static public function testconnection($name,$password){
+    static public function testconnection($mail,$password){
 
 
-        $req = (database::connect())->prepare("select * from personnes");
-        $req->bindParam(':iden', $name);
+        $req = (database::connect())->prepare("select mdp from personnes where email=:email");
+        $req->bindParam(':email', $mail);
         $req->execute();
 
         $result = $req->fetchAll();
-        var_dump($result);            
+        if ($result!=null){
+            if ($result[0]['mdp']==$password){
+                header("Location: accueil.php");
+            }
+            else{
+                echo "<div class='alert alert-danger' id='info'><strong>Erreur de connexion!</strong> Nom d'utilisateur ou mot de passe incorrect.</div>";
+            }
+        }        
+        else{
+            echo "<div class='alert alert-danger' id='info'><strong>Erreur de connexion!</strong> Nom d'utilisateur ou mot de passe incorrect.</div>";
+        }
+                    
 
     }
 
