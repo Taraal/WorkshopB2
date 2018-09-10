@@ -38,7 +38,7 @@
 
                     <div class="no-gutter">
                         <div class="row" id="nomprenom">
-                            <form method="post" id="forminscription" action="actioninscription.php">
+                            <form method="post" id="forminscription" action="traitement.php">
                                 <div class="col-6" class="name">
                                     <input name="nom" type="nom" class="form-control" placeholder="Nom" id="nom">
                                 </div>

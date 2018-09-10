@@ -1,4 +1,4 @@
-<?php include_once "../classes/Database.php" ?>
+
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -37,20 +37,11 @@
                 <div class="col-6" id="droite">
                     <h1>Patatoïde</h1>
                     <div id="laconnex">
-                        <form method="post" id="formconnexion" action="index.php">
-                            <input name="mail" type="email" class="form-control" placeholder="Entrez votre adresse mail"><br><br>
+                        <form method="post" id="formconnexion" action="connexion.php">
+                            <input name="email" type="email" class="form-control" placeholder="Entrez votre adresse mail"><br><br>
                             <input name="mdp" type="mdp" class="form-control" placeholder="Mot de passe"><br>
                             <center><button type="button | submit" class="boutonconnexion"><span>Se connecter</span></button></center>
                         </form>
-                        
-                        <?php
-                        if (isset($_POST["mail"])) {
-                            $mail = $_POST['mail'];
-                            $motdp = $_POST['mdp'];
-    
-                            database::testconnection($mail,$motdp);                        
-                        }
-                        ?>
                         
                     </div>
 
