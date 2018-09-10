@@ -123,3 +123,14 @@ h1{
 	width: 110%;
 	margin-right: 10%;
 }
+
+#header{
+	background-color: #3B9A9C;
+	margin : 10px;
+	border-radius: 30px;
+	padding:14px;
+	font-family: 'Pacifico', cursive;
+}
+#title{
+	text-align: center;
+}
