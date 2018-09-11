@@ -1,0 +1,113 @@
+html{
+	overflow-y: none;
+	overflow:hidden;
+	overflow-x: none;
+}
+
+body{
+	top: 0;
+	left: 0;
+	width: 100%;
+	margin:0px;
+	padding: 0px;
+	overflow-y: auto;
+	background-color: #014955;
+}
+
+
+
+
+
+
+h1{
+	font-family: 'Pacifico', cursive;
+	color: white;
+	text-align: center;
+	margin-top: 2%;
+	font-size: 50px;
+	margin-bottom: 2%;
+}
+
+#form-event{
+	background-color: white;
+	border-radius: 5px;
+	padding: 45px;
+}
+
+#form-event input{
+	margin-bottom: 15px;
+}
+
+#form-event h2{
+	margin-bottom: 30px;
+}
+
+.dropdown button{
+	background-color: white;
+	color: grey;
+	border-color: lightgrey;
+}
+
+.dropdown button:hover{
+	background-color: darkgrey;
+	color: white;
+	border-color: grey;
+}
+
+.dropdown button:focus{
+	background-color: darkgrey !important;
+	color: white;
+	border-color: grey;
+}
+
+.dropdown button:active{
+	background-color: darkgrey !important;
+	color: white;
+	border-color: grey;
+}
+
+.dropdown{
+	margin-bottom: 15px;
+}
+
+.dropdown-item{
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+
+hr{
+	margin: 0;
+}
+
+.dropdown-menu{
+	padding: 0;
+}
+
+#boutonevent{
+	margin-top: 15px;
+}
+
+#boutonevent{
+	margin-left: 5%;
+	padding-left: 20px;
+	padding-right: 20px;
+	background-color: white !important;
+	border:solid 2px #1687a7 !important;
+	color: black;
+	font-size: 20px;
+	font-family: 'Assistant', sans-serif;
+	border-radius: 15px !important;
+}
+
+#boutonevent:hover{
+	background-color: #ffffe3 !important;
+	color: black;
+}
+
+.form-group{
+	color: grey;
+}
+
+.form-control{
+	color: grey;
+}
