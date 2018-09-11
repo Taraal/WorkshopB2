@@ -3,23 +3,22 @@
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
-    include_once "../classes/Evenements.php";
-    include_once "../classes/Database.php";
-    include_once "../classes/Users.php";
+include_once "../classes/Evenements.php";
+include_once "../classes/Database.php";
+include_once "../classes/Users.php";
 
-    session_start();
+session_start();
 
-    if(isset($_SESSION['id'])){
+if (isset($_SESSION['id'])) {
 
-        $id = $_SESSION['id'];
+    $id = $_SESSION['id'];
 
 
-        $user = new User($id);
+    $user = new User($id);
 
-    }
-    else{
-        header("location: index.php");
-    }
+} else {
+    header("location: index.php");
+}
 
 
 ?>
@@ -47,7 +46,7 @@ ini_set('display_errors', 1);
         <title>Accueil</title>
     </head>
     <body>
-        <?php include_once "header.php"?>
+        <?php include_once "header.php" ?>
         <div id="left">
             <div class="MesEvents">Mes Events</div>
             <div class="MesEvents">Creer Events</div>
@@ -96,19 +95,19 @@ ini_set('display_errors', 1);
             
         </div>
         
-        
-    </body>
         <?php
-        
+
         $events = Evenements::get_events($id);
 
-        foreach($events as $key => $value){
+        foreach ($events as $key => $value) {
             echo "Nom de l'évènement : " . $value['Nom'] . "<br>";
             echo "Date : " . $value['Date'] . "<br>";
             echo "Details : " . $value['Description'] . "<br>";
 
-    }    
+        }
 
 
         ?>
+    </body>
+     
 </html>
