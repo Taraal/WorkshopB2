@@ -14,19 +14,19 @@ Class User {
 
         $pdo = Database::connect();
 
-        $statement = $pdo->prepare("SELECT * from personnes p WHERE p.id_Personne = :id");
+        $statement = $pdo->prepare("SELECT * FROM utilisateurs u WHERE u.id_utilisateur = :id");
         $statement->bindParam('id', $id);
         $statement->execute();
 
         $infos = $statement->fetch();
 
         if($statement) {
-            $this->id = $infos['id_Personne'];
-            $this->nom = $infos['Nom'];
-            $this->prenom = $infos['Prenom'];
-            $this->date = $infos['Date_naissance'];
-            $this->email = $infos['Email'];
-            $this->mdp = $infos['MDP'];
+            $this->id = $infos['id_utilisateur'];
+            $this->nom = $infos['nom'];
+            $this->prenom = $infos['prenom'];
+            $this->date = $infos['date_naissance'];
+            $this->email = $infos['email'];
+            $this->mdp = $infos['mdp'];
         }
 
         $pdo = null;

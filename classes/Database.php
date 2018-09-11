@@ -4,10 +4,10 @@ class config
 {
     const SERVERNAME="127.0.0.1";
     // const SERVERNAME = "90.59.72.190";
-    const PORT = "3307";
-    const DBNAME = "WorkshopB2";
+    const PORT = "3306";
+    const DBNAME = "workshopb2";
     const USER = "root";
-    const PASSWORD = ""; // A CHANGER // 
+    const PASSWORD = "modepasse1"; // A CHANGER // 
     
 }
 
@@ -24,19 +24,20 @@ class database
     static public function testconnection($mail,$password){
 
 
-        $req = (database::connect())->prepare("select * from personnes where email=:email");
+        $db = database::connect();
+        $req = $db->prepare("SELECT * FROM utilisateurs WHERE email = :email");
         $req->bindParam(':email', $mail);
         $req->execute();
         $result = $req->fetchAll();
         if ($result!=null){
 
-            if ($result[0]['MDP']==$password){
-                $id= $result[0]['id_Personne'];
+            if ($result[0]['mdp']==$password){
+                $id= $result[0]['id_utilisateur'];
                 session_start();
 
                 $_SESSION['id'] = $id;
 
-                header("Location: accueil.php?id=".$id);
+                header("Location: accueil.php");
             }
             else{
                 echo "<div class='alert alert-danger' id='info'><strong>Erreur de connexion!</strong> Nom d'utilisateur ou mot de passe incorrect.</div>";
