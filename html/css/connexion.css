@@ -6,6 +6,7 @@ body{
 	padding: 0px;
 	overflow-y: auto;
 	background-color: #014955;
+	font-family: 'Pacifico', cursive;
 }
 
 
@@ -139,4 +140,69 @@ h1{
 #profile{
 	margin-right: 30px;
 	text-align: right;
+}
+
+#left{
+	position: absolute;
+	left:50px;
+}
+#right{
+	position: absolute;
+	right:50px;
+}
+.MesEvents{
+	border-radius: 20px;
+	padding:10px;
+	background-color: #3B9A9C;
+	max-width: 350px;
+	margin: 10px;
+}
+
+#actu{
+	background-color: white;
+	max-width: 700px;
+	position:relative;
+	margin: 0 auto;
+	max-height: 550px;
+	overflow-y: scroll;
+}
+.Events{
+	padding-top:5px;
+	padding-bottom: 5px; 	
+	background-color: antiquewhite;
+	border-radius: 5px;
+	margin: 5px;
+	max-width: 700px;
+}
+.Events:hover{
+	background-color: #fcdaae;
+}
+.Events:hover > .Heart{
+	display: inline;
+	animation: apparition;
+	animation-duration: 0.5s;
+	opacity: 1;
+}
+@keyframes apparition{
+	0%{
+		left:100%;
+	}
+	100%{
+		left:90%;
+	}
+}
+.Heart{
+	top:10px;
+	left:90%;
+	position: relative;
+	opacity: 0;
+}
+.Titles{
+	font-size: 25px;
+	color: #cd5555;
+	margin-left: 20px;
+}
+.Descriptions{
+	max-width: 600px;
+	
 }
