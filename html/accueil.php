@@ -8,14 +8,12 @@ ini_set('display_errors', 1);
 
     session_start();
 
-    var_dump($_SESSION);
-
     if(isset($_SESSION['id'])){
 
-    $id = $_SESSION['id'];
+        $id = $_SESSION['id'];
 
 
-    $user = new User($id);
+        $user = new User($id);
 
     }
     else{
@@ -51,5 +49,20 @@ ini_set('display_errors', 1);
         <?php include_once "header.php"?>
         <div class="Events">Mes Events</div>
         <div class="Events">Creer Events</div>
-    </body>
+        <a href="profil.php">Mon profil</a>
+        <?php
+        
+        $events = $user->get_events();
+
+        foreach($events as $key => $value){
+            echo "Nom de l'évènement : " . $value['Nom'] . "<br>";
+            echo "Date : " . $value['Date'] . "<br>";
+            echo "Details : " . $value['Description'] . "<br>";
+
+    }    
+
+
+        ?>
+
+     </body>
 </html>
