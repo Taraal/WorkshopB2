@@ -206,3 +206,32 @@ h1{
 	max-width: 600px;
 	
 }
+a{
+	color: initial;
+	text-decoration: none;
+}
+a:hover{
+	color: initial;
+	text-decoration: none;
+}
+
+#profil{
+	font-size: 20px;
+	margin:0 auto;
+	background-color: antiquewhite;
+	max-width: 1000px;
+	padding:5px;
+	position: inline-block;
+	
+}
+#photo_profile{
+	position: inline;
+	left:75%;
+	border-radius:60%;
+	border-style: solid;
+	border-width: 4px;
+	border-color: #3B9A9C;
+}
+#les_buttons{
+	margin-top: 20px;
+}

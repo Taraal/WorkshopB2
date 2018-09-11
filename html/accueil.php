@@ -57,41 +57,51 @@ if (isset($_SESSION['id'])) {
             <div class="MesEvents">Status Actualisés</div>
         </div>
         <div id="actu">
-            <div class="Events">
-                <div class="Titles">Le Titre de l'évènement</div>
-                <img class="Heart" src="medias/like_empty.png" onmouseover="this.src='medias/like_full.png'"onmouseout="this.src='medias/like_empty.png'">
-                <div class="Dates">La Date: 15/09/2018</div>
-                <div class="Places">Le Lieux: 2ème rond point à droite</div>
-                <div class="Descriptions">Description: Trop Méga bien ! Venez nombreux (même avec votre chien ou vôtre escargot)</div>
-            </div>
-            <div class="Events">                
-                <div class="Titles">Le Titre de l'évènement</div>
-                <img class="Heart" src="medias/like_full.png" onmouseover="this.src='medias/like_empty.png'"onmouseout="this.src='medias/like_full.png'">
-                <div class="Dates">La Date: 15/09/2018</div>
-                <div class="Places">Le Lieux: 2ème rond point à droite</div>
-                <div class="Descriptions">Description: Trop Méga bien ! Venez nombreux (même avec votre chien ou vôtre escargot)</div>
-            </div>
-            <div class="Events">
-                <div class="Titles">Le Titre de l'évènement</div>
-                <img class="Heart" src="medias/like_empty.png" onmouseover="this.src='medias/like_full.png'"onmouseout="this.src='medias/like_empty.png'">
-                <div class="Dates">La Date: 15/09/2018</div>
-                <div class="Places">Le Lieux: 2ème rond point à droite</div>
-                <div class="Descriptions">Description: Trop Méga bien ! Venez nombreux (même avec votre chien ou vôtre escargot)</div>
-            </div>
-            <div class="Events">
-                <div class="Titles">Le Titre de l'évènement</div>
-                <img class="Heart" src="medias/like_empty.png" onmouseover="this.src='medias/like_full.png'"onmouseout="this.src='medias/like_empty.png'">
-                <div class="Dates">La Date: 15/09/2018</div>
-                <div class="Places">Le Lieux: 2ème rond point à droite</div>
-                <div class="Descriptions">Description: Trop Méga bien ! Venez nombreux (même avec votre chien ou vôtre escargot)</div>
-            </div>
-            <div class="Events">
-                <div class="Titles">Le Titre de l'évènement</div>
-                <img class="Heart" src="medias/like_empty.png" onmouseover="this.src='medias/like_full.png'"onmouseout="this.src='medias/like_empty.png'">
-                <div class="Dates">La Date: 15/09/2018</div>
-                <div class="Places">Le Lieux: 2ème rond point à droite</div>
-                <div class="Descriptions">Description: Trop Méga bien ! Venez nombreux (même avec votre chien ou vôtre escargot)</div>
-            </div>
+            <a href="evenements.php">
+                <div class="Events">
+                    <div class="Titles" >Le Titre de l'évènement</div>
+                    <img class="Heart" src="medias/like_empty.png" onmouseover="this.src='medias/like_full.png'"onmouseout="this.src='medias/like_empty.png'">
+                    <div class="Dates">La Date: 15/09/2018</div>
+                    <div class="Places">Le Lieux: 2ème rond point à droite</div>
+                    <div class="Descriptions">Description: Trop Méga bien ! Venez nombreux (même avec votre chien ou vôtre escargot)</div>
+                </div>
+            </a>
+            <a href="evenements.php">
+                <div class="Events">
+                    <div class="Titles" >Le Titre de l'évènement</div>
+                    <img class="Heart" src="medias/like_full.png" onmouseover="this.src='medias/like_empty.png'"onmouseout="this.src='medias/like_full.png'">
+                    <div class="Dates">La Date: 15/09/2018</div>
+                    <div class="Places">Le Lieux: 2ème rond point à droite</div>
+                    <div class="Descriptions">Description: Trop Méga bien ! Venez nombreux (même avec votre chien ou vôtre escargot)</div>
+                </div>
+            </a>
+            <a href="evenements.php">
+                <div class="Events">
+                    <div class="Titles" >Le Titre de l'évènement</div>
+                    <img class="Heart" src="medias/like_empty.png" onmouseover="this.src='medias/like_full.png'"onmouseout="this.src='medias/like_empty.png'">
+                    <div class="Dates">La Date: 15/09/2018</div>
+                    <div class="Places">Le Lieux: 2ème rond point à droite</div>
+                    <div class="Descriptions">Description: Trop Méga bien ! Venez nombreux (même avec votre chien ou vôtre escargot)</div>
+                </div>
+            </a>
+            <a href="evenements.php">
+                <div class="Events">
+                    <div class="Titles" >Le Titre de l'évènement</div>
+                    <img class="Heart" src="medias/like_empty.png" onmouseover="this.src='medias/like_full.png'"onmouseout="this.src='medias/like_empty.png'">
+                    <div class="Dates">La Date: 15/09/2018</div>
+                    <div class="Places">Le Lieux: 2ème rond point à droite</div>
+                    <div class="Descriptions">Description: Trop Méga bien ! Venez nombreux (même avec votre chien ou vôtre escargot)</div>
+                </div>
+            </a>
+            <a href="evenements.php">
+                <div class="Events">
+                    <div class="Titles" >Le Titre de l'évènement</div>
+                    <img class="Heart" src="medias/like_empty.png" onmouseover="this.src='medias/like_full.png'"onmouseout="this.src='medias/like_empty.png'">
+                    <div class="Dates">La Date: 15/09/2018</div>
+                    <div class="Places">Le Lieux: 2ème rond point à droite</div>
+                    <div class="Descriptions">Description: Trop Méga bien ! Venez nombreux (même avec votre chien ou vôtre escargot)</div>
+                </div>
+            </a>
             
         </div>
         

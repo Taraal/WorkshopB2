@@ -62,5 +62,15 @@
 
             ?>  
         </div>
+        <div id="profil">
+            <img id="photo_profile" src="medias/profile.png">
+            <input name="Family_Name" type="text" id="Family_Name" placeholder="Nom" />
+            <input name="Name" type="text" id="Name" placeholder="Prénom" />
+            <input name="Mail" type="text" id="Mail" placeholder="Prénom.Nom@mailbox.com" />  
+            <div id="les_buttons">  
+                <button type="button" class="btn btn-success">Sauvegarder</button>
+                <button type="button" class="btn btn-danger">Annuler</button>       
+            </div>  
+        </div>
     </body>
 </html>
