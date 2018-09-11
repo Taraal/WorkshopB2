@@ -4,10 +4,10 @@ class config
 {
     // const SERVERNAME="127.0.0.1";
     const SERVERNAME = "127.0.0.1";
-    const PORT = "3307";
+//    const PORT = "3307";
     const DBNAME = "workshopb2";
     const USER = "root";
-    const PASSWORD = "";
+    const PASSWORD = "modepasse1"; // A CHANGER // 
     
 }
 
@@ -17,7 +17,7 @@ class database
 
     static public function connect()
     {
-        $db = new PDO("mysql:host=" . Config::SERVERNAME . ";port=" . Config::PORT . ";dbname=" . Config::DBNAME, Config::USER, Config::PASSWORD, array(PDO::ATTR_PERSISTENT => true, PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8"));
+        $db = new PDO("mysql:host=" . Config::SERVERNAME . ";dbname=" . Config::DBNAME, Config::USER, Config::PASSWORD, array(PDO::ATTR_PERSISTENT => true, PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8"));
         return $db;
     }
 
@@ -27,7 +27,6 @@ class database
         $req = (database::connect())->prepare("select mdp from personnes where email=:email");
         $req->bindParam(':email', $mail);
         $req->execute();
-
         $result = $req->fetchAll();
         if ($result!=null){
             if ($result[0]['mdp']==$password){
