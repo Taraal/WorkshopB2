@@ -2,7 +2,7 @@
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
-include_once $_SERVER['DOCUMENT_ROOT'] . "/../classes/Database.php";
+include_once "../../classes/Database.php";
 
 
 if (isset($_POST['mail']) && isset($_POST['date']) && isset($_POST['password']) && isset($_POST['nom']) && isset($_POST['prenom'])){

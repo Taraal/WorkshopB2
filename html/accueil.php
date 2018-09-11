@@ -3,19 +3,18 @@
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
+    include_once "../classes/Evenements.php";
     include_once "../classes/Database.php";
     include_once "../classes/Users.php";
 
     session_start();
 
-    var_dump($_SESSION);
-
     if(isset($_SESSION['id'])){
 
-    $id = $_SESSION['id'];
+        $id = $_SESSION['id'];
 
 
-    $user = new User($id);
+        $user = new User($id);
 
     }
     else{
@@ -99,4 +98,17 @@ ini_set('display_errors', 1);
         
         
     </body>
+        <?php
+        
+        $events = Evenements::get_events($id);
+
+        foreach($events as $key => $value){
+            echo "Nom de l'évènement : " . $value['Nom'] . "<br>";
+            echo "Date : " . $value['Date'] . "<br>";
+            echo "Details : " . $value['Description'] . "<br>";
+
+    }    
+
+
+        ?>
 </html>

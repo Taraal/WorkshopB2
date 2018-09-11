@@ -32,6 +32,7 @@ Class User {
         $pdo = null;
     }
 
+
     
     public function get_id(){
         return $this->id;
