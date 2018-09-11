@@ -32,16 +32,6 @@ Class User {
         $pdo = null;
     }
 
-    public function get_events(){
-        
-        $pdo = Database::connect();
-
-        $statement = $pdo->prepare("SELECT * from evenements e JOIN participe pa ON pa.id_Evenement=e.id_Evenement WHERE pa.id_Personne = :id ORDER BY e.Date");
-            
-        $statement->execute(array(":id" => $this->id));
-        return $statement->fetchAll(PDO::FETCH_ASSOC);
-
-    }
 
     
     public function get_id(){

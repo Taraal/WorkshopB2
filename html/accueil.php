@@ -3,6 +3,7 @@
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
+    include_once "../classes/Evenements.php";
     include_once "../classes/Database.php";
     include_once "../classes/Users.php";
 
@@ -52,7 +53,7 @@ ini_set('display_errors', 1);
         <a href="profil.php">Mon profil</a>
         <?php
         
-        $events = $user->get_events();
+        $events = Evenements::get_events($id);
 
         foreach($events as $key => $value){
             echo "Nom de l'évènement : " . $value['Nom'] . "<br>";
