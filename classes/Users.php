@@ -32,10 +32,28 @@ Class User {
         $pdo = null;
     }
 
-
-
+    
+    public function get_id(){
+        return $this->id;
+    }
+    
+    public function get_nom(){
+        return $this->nom;
     }
 
+    public function get_prenom(){
+        return $this->prenom;
+    }
 
+    public function get_email(){
+        return $this->email;
+    }
 
+    public function get_date(){
+        return $this->date;
+    }
+
+    public function get_mdp(){
+        return $this->mdp;
+    }
 }

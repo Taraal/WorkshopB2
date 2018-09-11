@@ -25,11 +25,8 @@ if (isset($_POST['mail']) && isset($_POST['date']) && isset($_POST['password']) 
         $req = $db->prepare("INSERT INTO `personnes` (`id_Personne`, `Nom`, `Prenom`, `Date_naissance`, `Email`, `MDP`) VALUES (NULL, :nom, :prenom, :date, :mail, :mdp)");
         $req->execute(array(':nom' => $_POST['nom'], ':prenom' => $_POST['prenom'], ':date' => $_POST['date'], ':mail' => $_POST['mail'], ':mdp' => $_POST['password']));
 
-        $id = $req->lastInsertId();
-
         session_start();
-    header("location: ../accueil.php?id=".$id);
-    echo "SUCCESS";
+    header("location: ../accueil.php");
     }
 
 

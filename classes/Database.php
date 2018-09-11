@@ -34,6 +34,8 @@ class database
                 $id= $result[0]['id_Personne'];
                 session_start();
 
+                $_SESSION['id'] = $id;
+
                 header("Location: accueil.php?id=".$id);
             }
             else{
