@@ -3,11 +3,11 @@
 class config
 {
     // const SERVERNAME="127.0.0.1";
-    const SERVERNAME = "127.0.0.1";
-//    const PORT = "3307";
-    const DBNAME = "workshopb2";
+    const SERVERNAME = "90.59.72.190";
+    const PORT = "3307";
+    const DBNAME = "WorkshopB2";
     const USER = "root";
-    const PASSWORD = "modepasse1"; // A CHANGER // 
+    const PASSWORD = ""; // A CHANGER // 
     
 }
 
