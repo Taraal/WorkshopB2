@@ -24,13 +24,19 @@ class database
     static public function testconnection($mail,$password){
 
 
-        $req = (database::connect())->prepare("select mdp from personnes where email=:email");
+        $req = (database::connect())->prepare("select * from personnes where email=:email");
         $req->bindParam(':email', $mail);
         $req->execute();
         $result = $req->fetchAll();
         if ($result!=null){
-            if ($result[0]['mdp']==$password){
-                header("Location: accueil.php");
+
+            if ($result[0]['MDP']==$password){
+                $id= $result[0]['id_Personne'];
+                session_start();
+
+                $_SESSION['id'] = $id;
+
+                header("Location: accueil.php?id=".$id);
             }
             else{
                 echo "<div class='alert alert-danger' id='info'><strong>Erreur de connexion!</strong> Nom d'utilisateur ou mot de passe incorrect.</div>";

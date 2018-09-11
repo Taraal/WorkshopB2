@@ -1,3 +1,29 @@
+<?php
+
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
+    include_once "../classes/Database.php";
+    include_once "../classes/Users.php";
+
+    session_start();
+
+    var_dump($_SESSION);
+
+    if(isset($_SESSION['id'])){
+
+    $id = $_SESSION['id'];
+
+
+    $user = new User($id);
+
+    }
+    else{
+        header("location: index.php");
+    }
+
+
+?>
 <html>
     <head>
         <meta charset="utf-8">

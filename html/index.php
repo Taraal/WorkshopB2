@@ -39,7 +39,7 @@
                     <div id="laconnex">
                         <form method="post" id="formconnexion" action="connexion.php">
                             <input name="email" type="email" class="form-control" placeholder="Entrez votre adresse mail"><br><br>
-                            <input name="mdp" type="mdp" class="form-control" placeholder="Mot de passe"><br>
+                            <input name="mdp" type="password" class="form-control" placeholder="Mot de passe"><br>
                             <center><button type="button | submit" class="boutonconnexion"><span>Se connecter</span></button></center>
                         </form>
                         
