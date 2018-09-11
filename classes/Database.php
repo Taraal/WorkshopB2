@@ -2,12 +2,12 @@
 
 class config
 {
-    // const SERVERNAME="127.0.0.1";
-    const SERVERNAME = "127.0.0.1";
-//    const PORT = "3307";
-    const DBNAME = "workshopb2";
+    const SERVERNAME="127.0.0.1";
+    // const SERVERNAME = "90.59.72.190";
+    const PORT = "3307";
+    const DBNAME = "WorkshopB2";
     const USER = "root";
-    const PASSWORD = "modepasse1"; // A CHANGER // 
+    const PASSWORD = ""; // A CHANGER // 
     
 }
 
@@ -17,7 +17,7 @@ class database
 
     static public function connect()
     {
-        $db = new PDO("mysql:host=" . Config::SERVERNAME . ";dbname=" . Config::DBNAME, Config::USER, Config::PASSWORD, array(PDO::ATTR_PERSISTENT => true, PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8"));
+        $db = new PDO("mysql:host=" . Config::SERVERNAME . ";port=" . Config::PORT . ";dbname=" . Config::DBNAME, Config::USER, Config::PASSWORD, array(PDO::ATTR_PERSISTENT => true, PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8"));
         return $db;
     }
 
