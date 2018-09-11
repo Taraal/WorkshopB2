@@ -54,6 +54,7 @@ session_start();
                         <input name="nom" type="title" class="form-control event" placeholder="Titre de l'événement" id="titre">
                         <input name="place" type="place" class="form-control event" placeholder="Lieu de l'événement" id="place">
                         <input name="date" type="date" class="form-control event" placeholder="Date" id="date">
+                        <input type="time" name="time" id="type">
                         <input type="file" name="icone" id="icone" class="input-file event"/>
                         <textarea id="description" name="description" class="form-control event" placeholder="Descrition de l'événement" rows="4" required="required" ></textarea>
                         <center><button type="submit" class="btn btn-primary" id="boutonevent"><span>Creer l'événement</span></button></center>

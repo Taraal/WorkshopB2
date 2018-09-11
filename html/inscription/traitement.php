@@ -10,7 +10,7 @@ if (isset($_POST['mail']) && isset($_POST['date']) && isset($_POST['password']) 
 
     $db = Database::connect();
 
-    $req = $db->prepare("SELECT * FROM personnes WHERE Email = :mail");
+    $req = $db->prepare("SELECT * FROM utilisateurs WHERE email = :mail");
     $req->bindParam('mail', $_POST['mail']);
     $req->execute();
     $verif = $req->fetch();
@@ -22,10 +22,13 @@ if (isset($_POST['mail']) && isset($_POST['date']) && isset($_POST['password']) 
 
     else{
 
-        $req = $db->prepare("INSERT INTO `personnes` (`id_Personne`, `Nom`, `Prenom`, `Date_naissance`, `Email`, `MDP`) VALUES (NULL, :nom, :prenom, :date, :mail, :mdp)");
+        $req = $db->prepare("INSERT INTO `utilisateurs` (`id_utilisateur`, `nom`, `prenom`, `date_naissance`, `email`, `mdp`) VALUES (NULL, :nom, :prenom, :date, :mail, :mdp)");
         $req->execute(array(':nom' => $_POST['nom'], ':prenom' => $_POST['prenom'], ':date' => $_POST['date'], ':mail' => $_POST['mail'], ':mdp' => $_POST['password']));
 
         session_start();
+    
+        $_SESSION['id'] = $db->lastInsertId();
+
     header("location: ../accueil.php");
     }
 

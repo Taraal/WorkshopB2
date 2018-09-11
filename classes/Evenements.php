@@ -13,7 +13,7 @@ class Evenements {
         
         $pdo = Database::connect();
 
-        $statement = $pdo->prepare("SELECT * from evenements e JOIN participe pa ON pa.id_Evenement=e.id_Evenement WHERE pa.id_Personne = :id ORDER BY e.Date");
+        $statement = $pdo->prepare("SELECT * from evenements e JOIN participe pa ON pa.id_evenement=e.id_Evenement WHERE pa.id_utilisateur = :id ORDER BY e.date_heure");
             
         $statement->execute(array(":id" => $id));
         return $statement->fetchAll(PDO::FETCH_ASSOC);
