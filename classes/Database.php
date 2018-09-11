@@ -24,7 +24,8 @@ class database
     static public function testconnection($mail,$password){
 
 
-        $req = (database::connect())->prepare("SELECT * FROM utilisateurs WHERE email = :email");
+        $db = database::connect();
+        $req = $db->prepare("SELECT * FROM utilisateurs WHERE email = :email");
         $req->bindParam(':email', $mail);
         $req->execute();
         $result = $req->fetchAll();
