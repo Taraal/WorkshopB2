@@ -32,8 +32,52 @@ Class User {
         $pdo = null;
     }
 
+    public function create_group($nom, $description){
 
+        $pdo = database::connect();
+
+        $statement = $pdo->prepare("INSERT INTO groupes (id_groupe, id_proprio, nom, description) VALUES (NULL, :id_proprio, :nom, :desc)");
+        $statement->execute(array(':id_proprio'=>$this->id, ':nom'=>$nom, ':description'=>$description));
+
+        return $id_g = $pdo->lastInsertId();
+    }
     
+    public function delete_group($id){
+
+        $pdo = database::connect();
+
+        $statement = $pdo->prepare("DELETE FROM groupes WHERE id_groupe = :id AND id_proprio = :id_u");
+        $statement->execute(array(':id'=>$id, ':id_u'=>$this->id));
+
+        $pdo = null;
+
+    }
+
+    public function join_group($id_g){
+
+        $pdo = database::connect();
+
+        $statement = $pdo->prepare("INSERT INTO membres (id_groupe, id_utilisateur) VALUES (:id_g, :id_u)");
+        $statement->execute(array(':id_g'=> $id_g, ':id_u'=>$id_u));
+
+        $pdo = null;
+
+    }
+
+    public function get_groups(){
+
+        $pdo = database::connect();
+
+        $statement = $pdo->prepare("SELECT * FROM groupes g JOIN membres m ON m.id_groupe=g.id_groupe WHERE m.id_utilisateur = :id_u");
+        $statement->execute(array(':id_u'=>$this->id));
+
+        $result = $statement->fetchAll();
+
+        return $result;
+
+    }
+
+
     public function get_id(){
         return $this->id;
     }

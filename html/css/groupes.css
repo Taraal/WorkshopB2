@@ -1,0 +1,21 @@
+#create_group{
+    position: absolute;
+    margin-left: 10px;
+    background-color: antiquewhite;
+    width: 350px;;
+}
+#my_groups{
+    position: relative;
+    margin: 0 auto;
+    max-width: 500px;
+    background-color: wheat;
+    padding: 8px;
+}
+#boutton_creation{
+    margin: 10px;
+}
+.group{
+    padding: 2px;
+    margin:3px;
+    background-color: antiquewhite;
+}

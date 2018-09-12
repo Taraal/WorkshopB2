@@ -6,6 +6,7 @@ body{
 	padding: 0px;
 	overflow-y: auto;
 	background-color: #014955;
+	font-family: 'Pacifico', cursive;
 }
 
 
@@ -129,13 +130,12 @@ h1{
 	margin : 10px;
 	border-radius: 30px;
 	padding:14px;
-
+	font-family: 'Pacifico', cursive;
 }
 #title{
 	font-size: 25px;
 	text-align: center;
 	position: relative;
-		font-family: 'Pacifico', cursive;
 }
 #profile{
 	margin-right: 30px;
@@ -216,6 +216,7 @@ a:hover{
 }
 
 #profil{
+	border-radius: 5px;
 	font-size: 20px;
 	margin:0 auto;
 	background-color: antiquewhite;
@@ -234,4 +235,9 @@ a:hover{
 }
 #les_buttons{
 	margin-top: 20px;
+}
+.input{
+	margin: 2px;
+	margin-left:10px;
+	min-width: 300px;
 }
