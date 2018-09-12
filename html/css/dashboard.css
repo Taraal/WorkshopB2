@@ -1,6 +1,11 @@
 body{
   background-color: #014955;
 }
+html{
+  overflow-x: none;
+  overflow-x:hidden;
+
+}
 
 
 .row {
