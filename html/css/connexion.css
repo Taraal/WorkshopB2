@@ -216,6 +216,7 @@ a:hover{
 }
 
 #profil{
+	border-radius: 5px;
 	font-size: 20px;
 	margin:0 auto;
 	background-color: antiquewhite;
@@ -234,4 +235,9 @@ a:hover{
 }
 #les_buttons{
 	margin-top: 20px;
+}
+.input{
+	margin: 2px;
+	margin-left:10px;
+	border-radius: 20px;
 }

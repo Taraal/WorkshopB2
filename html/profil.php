@@ -48,25 +48,14 @@
     </head>
     <body>
         <?php include_once "header.php"?>
-        <div class="Events">Mes Events</div>
-        <div class="Events">Creer Events</div>
-    
-        <div class="Infos"><?php
-            echo "Nom : " . $user->get_nom();
-            echo "<br>";
-            echo "Prenom : " . $user->get_prenom();
-            echo "<br>";
-            echo "Email : <a href=" . $user->get_email() .">" . $user->get_email() . "</a> ";
-            echo "<br>";
-            echo "Date de naissance : " .$user->get_date();
+       
 
-            ?>  
-        </div>
         <div id="profil">
-            <img id="photo_profile" src="medias/profile.png">
-            <input name="Family_Name" type="text" id="Family_Name" placeholder="Nom" />
-            <input name="Name" type="text" id="Name" placeholder="Prénom" />
-            <input name="Mail" type="text" id="Mail" placeholder="Prénom.Nom@mailbox.com" />  
+            <img id="photo_profile" src="medias/profile.png"><br>
+            <input class="input" name="Family_Name" type="text" id="Family_Name" placeholder="<?php echo $user->get_nom();?>" /><br>
+            <input class="input" name="Name" type="text" id="Name" placeholder="<?php echo $user->get_prenom();?>" /><br>
+            <input class="input" name="Mail" type="text" id="Mail" placeholder="<?php echo $user->get_email();?>" />  <br>
+            <input class="input" name="Mail" type="text" id="Mail" placeholder="<?php echo $user->get_date();?>" />  
             <div id="les_buttons">  
                 <button type="button" class="btn btn-success">Sauvegarder</button>
                 <button type="button" class="btn btn-danger">Annuler</button>       
