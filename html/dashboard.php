@@ -1,3 +1,27 @@
+
+<?php
+
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
+include_once "../classes/Evenements.php";
+include_once "../classes/Database.php";
+include_once "../classes/Users.php";
+
+session_start();
+
+if (isset($_SESSION['id'])) {
+
+    $id = $_SESSION['id'];
+
+
+    $user = new User($id);
+
+} else {
+    header("location: index.php");
+}
+
+?>
 <html>
     <head>
         <meta charset="utf-8">
@@ -69,10 +93,10 @@
     <div class="col-6">
         <div class="boutonchoix">
             <div class="btn-group">
-                <button type="button" class="btn btn-primary active">Tous</button>
-                <button type="button" class="btn btn-primary">Se restaurer</button>
-                <button type="button" class="btn btn-primary">Faire du sport</button>
-                <button type="button" class="btn btn-primary">Sortir</button>
+                <a href="dashboard.php"><button type="button" name="tri" value="all" class="btn btn-primary active">Tous</button></a>
+                <a href="dashboard.php?tri=1"><button type="button" name="tri" value="restau" class="btn btn-primary active">Se restaurer</button></a>
+                <a href="dashboard.php?tri=2"><button type="button" name="tri" value="sport" class="btn btn-primary active">Faire du sport</button></a>
+                <a href="dashboard.php?tri=3"><button type="button" name="tri" value="sortir" class="btn btn-primary active">Sortir</button></a>
             </div>
         </div>
     </div>
@@ -84,57 +108,64 @@
 </div>
 
 
+<?php 
 
+if (isset($_GET["tri"])) {
 
+    $results = Evenements::get_specific_events($_GET['tri']);
+
+}
+else { 
+    $results = Evenements::get_all_events();
+}
+
+$i2 = 0;
+$i3 = 0;
+$tabimpair = [];
+$tabpair = [];
+    for($i = 0 ; $i < count($results); $i++){
+        if($i % 2 == 0){
+            $tabpair[$i2] = $results[$i];
+            $i2++;
+        }
+        elseif($i % 2 !=0){
+            $tabimpair[$i3] = $results[$i];
+            $i3++;
+        }
+    }
+
+?>
         <div class="container">
         <div class="row"> 
   <div class="column">
-    <div class="no-gutter image">
-        <img class="Heart" src="medias/like_empty.png" onmouseover="this.src='medias/like_full.png'"onmouseout="this.src='medias/like_empty.png'">
-        <img src="article/imagearticle/1.png" alt="Norway" style="width:100%;">
+<?php
+    foreach($tabpair as $key => $value){
+?>
+        <div class="no-gutter image">
+        <img src="article/imagearticle/<?php echo $value['id_evenement']; ?>.png" alt="Norway" style="width:100%;">
         <div class="text-block"> 
-            <h4>Grosse soirée</h4>
+        <h4><?php echo $value['nom']; ?></h4>
         </div>
-</div>
-    <div class="no-gutter image">
         <img class="Heart" src="medias/like_empty.png" onmouseover="this.src='medias/like_full.png'"onmouseout="this.src='medias/like_empty.png'">
-        <img src="article/imagearticle/2.png" alt="Norway" style="width:100%;">
-        <div class="text-block"> 
-            <h4>On va voir des voitures</h4>
-        </div>
-</div>
-    <div class="no-gutter image">
-        <img class="Heart" src="medias/like_empty.png" onmouseover="this.src='medias/like_full.png'"onmouseout="this.src='medias/like_empty.png'">
-        <img src="article/imagearticle/3.png" alt="Norway" style="width:100%;">
-        <div class="text-block"> 
-            <h4>On va manger des flammands roses</h4>
-        </div>
-</div>
-   
+    </div>
+
+<?php  } ?>
   </div>
+
   <div class="column">
-   <div class="no-gutter image">
-        <img class="Heart" src="medias/like_empty.png" onmouseover="this.src='medias/like_full.png'"onmouseout="this.src='medias/like_empty.png'">
-        <img src="article/imagearticle/4.png" alt="Norway" style="width:100%;">
+<?php
+    foreach($tabimpair as $key => $value){
+?>
+        <div class="no-gutter image">
+        <img src="article/imagearticle/<?php echo $value['id_evenement']; ?>.png" alt="Norway" style="width:100%;">
         <div class="text-block"> 
-            <h4>Go randonnée</h4>
+        <h4><?php echo $value['nom']; ?></h4>
         </div>
-</div>
-   <div class="no-gutter image">
-        <img class="Heart" src="medias/like_empty.png" onmouseover="this.src='medias/like_full.png'"onmouseout="this.src='medias/like_empty.png'">
-        <img src="article/imagearticle/5.png" alt="Norway" style="width:100%;">
-        <div class="text-block"> 
-            <h4>Oups ca c'est debian</h4>
-        </div>
-</div>
-   <div class="no-gutter image">
-        <img class="Heart" src="medias/like_empty.png" onmouseover="this.src='medias/like_full.png'"onmouseout="this.src='medias/like_empty.png'">
-        <img src="article/imagearticle/6.png" alt="Norway" style="width:100%;">
-        <div class="text-block"> 
-            <h4>Soirée deguisée</h4>
-        </div>
-</div>
-  </div> 
+    </div>
+
+<?php  } ?>
+  </div>
+
 </div>
 </div>
 

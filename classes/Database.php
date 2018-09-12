@@ -5,7 +5,7 @@ class config
     const SERVERNAME="127.0.0.1";
     // const SERVERNAME = "90.59.72.190";
     const PORT = "3306";
-    const DBNAME = "workshopb2";
+    const DBNAME = "workshopb21";
     const USER = "root";
     const PASSWORD = "modepasse1"; // A CHANGER // 
     
@@ -37,7 +37,7 @@ class database
 
                 $_SESSION['id'] = $id;
 
-                header("Location: accueil.php");
+                header("Location: dashboard.php");
             }
             else{
                 echo "<div class='alert alert-danger' id='info'><strong>Erreur de connexion!</strong> Nom d'utilisateur ou mot de passe incorrect.</div>";
