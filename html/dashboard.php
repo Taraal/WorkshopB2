@@ -90,18 +90,21 @@
         <div class="row"> 
   <div class="column">
     <div class="no-gutter image">
+        <img class="Heart" src="medias/like_empty.png" onmouseover="this.src='medias/like_full.png'"onmouseout="this.src='medias/like_empty.png'">
         <img src="article/imagearticle/1.png" alt="Norway" style="width:100%;">
         <div class="text-block"> 
             <h4>Grosse soirée</h4>
         </div>
 </div>
     <div class="no-gutter image">
+        <img class="Heart" src="medias/like_empty.png" onmouseover="this.src='medias/like_full.png'"onmouseout="this.src='medias/like_empty.png'">
         <img src="article/imagearticle/2.png" alt="Norway" style="width:100%;">
         <div class="text-block"> 
             <h4>On va voir des voitures</h4>
         </div>
 </div>
     <div class="no-gutter image">
+        <img class="Heart" src="medias/like_empty.png" onmouseover="this.src='medias/like_full.png'"onmouseout="this.src='medias/like_empty.png'">
         <img src="article/imagearticle/3.png" alt="Norway" style="width:100%;">
         <div class="text-block"> 
             <h4>On va manger des flammands roses</h4>
@@ -111,18 +114,21 @@
   </div>
   <div class="column">
    <div class="no-gutter image">
+        <img class="Heart" src="medias/like_empty.png" onmouseover="this.src='medias/like_full.png'"onmouseout="this.src='medias/like_empty.png'">
         <img src="article/imagearticle/4.png" alt="Norway" style="width:100%;">
         <div class="text-block"> 
             <h4>Go randonnée</h4>
         </div>
 </div>
    <div class="no-gutter image">
+        <img class="Heart" src="medias/like_empty.png" onmouseover="this.src='medias/like_full.png'"onmouseout="this.src='medias/like_empty.png'">
         <img src="article/imagearticle/5.png" alt="Norway" style="width:100%;">
         <div class="text-block"> 
             <h4>Oups ca c'est debian</h4>
         </div>
 </div>
    <div class="no-gutter image">
+        <img class="Heart" src="medias/like_empty.png" onmouseover="this.src='medias/like_full.png'"onmouseout="this.src='medias/like_empty.png'">
         <img src="article/imagearticle/6.png" alt="Norway" style="width:100%;">
         <div class="text-block"> 
             <h4>Soirée deguisée</h4>
