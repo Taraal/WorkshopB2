@@ -49,7 +49,7 @@ if (isset($_SESSION['id'])) {
         <?php include_once "header.php" ?>
         <div id="left">
             <div class="MesEvents">Mes Events</div>
-            <div class="MesEvents">Creer Events</div>
+            <div class="MesEvents"><a href="article/creationarticle.php">Creer Events</a></div>
             <div class="MesEvents"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d86684.63842802636!2d-1.630095838046561!3d47.23820066072374!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4805ee81f0a8aead%3A0x40d37521e0ded30!2sNantes!5e0!3m2!1sfr!2sfr!4v1536659121588" width="300" height="200" frameborder="0" style="border:0" allowfullscreen></iframe></div>
         </div>
         <div id="right">
