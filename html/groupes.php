@@ -49,19 +49,37 @@
     <body>
         <?php include_once "header.php" ?>
         <div id="create_group">
-            Creer Groupe<br>
+            <div class="Titles">Creer Groupe</div><br>
             <input class="input" name="Family_Name" type="text" id="Family_Name" placeholder="Nom du Groupe" /><br>
+            <input class="input" name="Family_Name" type="text" id="Family_Name" placeholder="Description du groupe" style="height:50px;" /><br>
             <button id="boutton_creation" type="button" class="btn btn-success">Creer</button>
         </div>
-        <div id="my_groups">Mes Groupes
-            <div class="group">Groupe 1
+        <div id="my_groups"><div class="Titles">Mes Groupes</div>
+            <div class="group"><div class="Title">Groupe 1</div>
                 <div class="person">Personne 1</div>
                 <div class="person">Personne 2</div>
                 <div class="person">Personne 3</div>
                 <div class="person">Personne 4</div>
                 <div class="person">Personne 5</div>
             </div>
-            <div class="group">Groupe 2
+            <div class="group"><div class="Title">Groupe 2</div>
+                <div class="person">Personne 1</div>
+                <div class="person">Personne 2</div>
+                <div class="person">Personne 3</div>
+                <div class="person">Personne 4</div>
+                <div class="person">Personne 5</div>
+            </div>
+        </div>
+
+        <div id="other_groups"><div class="Titles">Autres Groupes</div>
+            <div class="group"><div class="Title">Groupe 1</div>
+                <div class="person">Personne 1</div>
+                <div class="person">Personne 2</div>
+                <div class="person">Personne 3</div>
+                <div class="person">Personne 4</div>
+                <div class="person">Personne 5</div>
+            </div>
+            <div class="group"><div class="Title">Groupe 2</div>
                 <div class="person">Personne 1</div>
                 <div class="person">Personne 2</div>
                 <div class="person">Personne 3</div>
