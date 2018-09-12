@@ -44,7 +44,7 @@
         <!-- CSS -->
         <link rel="stylesheet" type="text/css" href="css/connexion.css">
 
-        <title>Accueil</title>
+        <title>Profil</title>
     </head>
     <body>
         <?php include_once "header.php"?>
