@@ -42,7 +42,7 @@ class database
                 $_SESSION['nom']=$nom;
                 $_SESSION['prenom']=$prenom;
 
-                header("Location: accueil.php");
+                header("Location: dashboard.php");
             }
             else{
                 echo "<div class='alert alert-danger' id='info'><strong>Erreur de connexion!</strong> Nom d'utilisateur ou mot de passe incorrect.</div>";
