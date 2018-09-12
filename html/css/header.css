@@ -13,6 +13,7 @@
 
 .menu:active{
 	border: solid 1px transparent !important;
+	border: solid 1px transparent !important;
 	text-decoration: none;
 }
 
@@ -32,3 +33,4 @@
 	background-color: transparent !important;
 	border: solid 1px transparent !important;
 }
+

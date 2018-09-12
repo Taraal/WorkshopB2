@@ -88,9 +88,11 @@ include_once "../../classes/Database.php";
 <?php
         $idimage=$donnee['id_evenement'];
 
-         echo "<img src=imagearticle/". $idimage.'.png>'; ?>
+        ?><div class="center"><?php
 
+         echo "<img src=imagearticle/". $idimage.'.png>'; ?><br>
 
+            </div>
                 <?php 
                 echo $donnee['description']; ?>
                 
