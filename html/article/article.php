@@ -65,11 +65,15 @@ include_once "../../classes/Database.php";
 
 <?php
     $db = Database::connect();
-    $req = $db->prepare("SELECT * from evenements WHERE id_evenement=9");
+    $req = $db->prepare("SELECT * from articles WHERE id_article=4");
     $req->execute();
+
+    $req2=$db->prepare("SELECT nom, prenom FROM utilisateurs JOIN articles WHERE id_auteur=id_utilisateur && id_article=4");
+    $req2->execute();
 
     
   $donnee=$req->fetch(PDO::FETCH_ASSOC);
+  $name=$req2->fetch(PDO::FETCH_ASSOC);
 
     
 ?>
@@ -80,21 +84,21 @@ include_once "../../classes/Database.php";
             <div class="col-1">
             </div>
             <div class="col-10">
-                <h1> <?php echo $donnee['nom']; ?></h1>
-                <p class="dateheure"> <?php echo $donnee['date'].' - '. $donnee['heure']; ?></p>
-                <p class="lieu"><?php echo $donnee['lieu']; ?></p>
+                <h1> <?php echo $donnee['titre']; ?></h1>
+                <p class="dateheure"> <?php echo 'le '. $donnee['date']; ?></p>
+                <p class="lieu"><?php echo 'par '. $name['prenom'].' '.$name['nom']; ?></p>
 
 
 <?php
-        $idimage=$donnee['id_evenement'];
+        $idimage=$donnee['id_article'];
 
         ?><div class="center"><?php
 
-         echo "<img src=imagearticle/". $idimage.'.png>'; ?><br>
+         echo "<img src=imagearticles/". $idimage.'.png>'; ?><br>
 
             </div>
                 <?php 
-                echo $donnee['description']; ?>
+                echo $donnee['texte']; ?>
                 
 
 

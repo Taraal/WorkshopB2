@@ -11,7 +11,7 @@ $pseudo=$_SESSION['prenom'].' '.$_SESSION['nom'];
 
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous"> <!--
 
-        <!-- CSS -->
+        <-- CSS -->
     <link rel="stylesheet" type="text/css" href="css/header.css">
 
 
@@ -39,7 +39,7 @@ $pseudo=$_SESSION['prenom'].' '.$_SESSION['nom'];
   		</button>
   		<div class="dropdown-menu">
     		<a class="dropdown-item" href="article/creationarticle.php">Creer événement</a>
-    		<a class="dropdown-item" href="#">Creer article</a>
+    		<a class="dropdown-item" href="article/creaarticle.php">Creer article</a>
   </div>
 </div>
       
