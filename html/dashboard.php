@@ -155,7 +155,7 @@ for ($i = 0; $i < count($results); $i++) {
                         </a>
                     <div class="no-gutter image">                    
 
-                        <a href="evenement.php?id=<?php echo $value['id_evenement']; ?>"> <img src="article/imagearticle/<?php echo $value['id_evenement']; ?>.png"
+                        <a href="evenement.php?id=<?php echo $value['id_evenement']; ?>"> <img src="imagearticle/<?php echo $value['id_evenement']; ?>.png"
                                 alt="Norway" style="width:100%;">
                         </a>
                         <div class="text-block">
@@ -182,8 +182,8 @@ for ($i = 0; $i < count($results); $i++) {
                     </a>
                 <div class="no-gutter image">
 
-                    <a href="article/evenement.php?id=<?php echo $value['id_evenement']; ?>">
-                        <img src="article/imagearticle/<?php echo $value['id_evenement']; ?>.png" alt="Norway" style="width:100%;">
+                    <a href="evenement.php?id=<?php echo $value['id_evenement']; ?>">
+                        <img src="imagearticle/<?php echo $value['id_evenement']; ?>.png" alt="Norway" style="width:100%;">
                     </a>
                     <div class="text-block">
                         <h4>
@@ -235,7 +235,7 @@ for ($i = 0; $i < count($results); $i++) {
                 ?>
                 <div class="no-gutter image">                    
 
-                    <a href="article/article.php?id=<?php echo $value['id_article']; ?>"> <img src="article/imagearticles/<?php echo $value['id_article']; ?>.png"
+                    <a href="article.php?id=<?php echo $value['id_article']; ?>"> <img src="imagearticles/<?php echo $value['id_article']; ?>.png"
                             alt="Norway" style="width:100%;">
                     </a>
                     <div class="text-block">
@@ -255,8 +255,8 @@ for ($i = 0; $i < count($results); $i++) {
                 ?>
                 <div class="no-gutter image">
 
-                    <a href="article/article.php?id=<?php echo $value['id_article']; ?>">
-                        <img src="article/imagearticles/<?php echo $value['id_article']; ?>.png" alt="Norway" style="width:100%;">
+                    <a href="article.php?id=<?php echo $value['id_article']; ?>">
+                        <img src="imagearticles/<?php echo $value['id_article']; ?>.png" alt="Norway" style="width:100%;">
                     </a>
                     <div class="text-block">
                         <h4>
