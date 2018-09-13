@@ -19,7 +19,7 @@ $db = Database::connect();
 $id = $_POST['id'];
 
 
-	header("Location:article/evenement.php?id=".$id);
+	header("Location:evenement.php?id=".$id);
 
 
 

@@ -201,7 +201,7 @@ for ($i = 0; $i < count($all_groups); $i++) {
 </div>
 </div>
 </div>
-</div>
+
 
 
 

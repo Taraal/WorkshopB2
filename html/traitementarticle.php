@@ -72,7 +72,7 @@ $req5->execute();
 
 
 
-header('Location:../accueil.php?id='.$idpersonne.'');
+header('Location:../accueil.php?sort=event&id='.$idpersonne.'');
 
 
 

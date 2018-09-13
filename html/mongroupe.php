@@ -47,36 +47,7 @@ if (isset($_SESSION['id'])) {
     </head>
     <body>
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <a class="navbar-brand" href="javascript:void(0)">Patatoïde</a>
-  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navb">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-
-  <div class="collapse navbar-collapse" id="navb">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item">
-        <a class="nav-link" href="javascript:void(0)">Mes events</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="javascript:void(0)">Creer events</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="javascript:void(0)">Groupes</a>
-      </li>
-    </ul>
-
-<div class="dropdown my-2 my-lg-0">
-  <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
-        <?php echo $user->get_nom() , " ", $user->get_prenom(); ?>
-  </button>
-  <div class="dropdown-menu">
-    <a class="dropdown-item" href="profil.php">Mon profil</a>
-    <a class="dropdown-item" href="index.php">Se deconnecter</a>
-  </div>
-</div>
-
-</nav>
+<?php  include_once "header.php"; ?>
 
 <div class="no-gutter">
     <div class="row">
@@ -92,12 +63,38 @@ if (isset($_SESSION['id'])) {
 
     <div class="col-6">
         <div class="boutonchoix">
+            <?php if(isset($_GET['tri'])){ ?>
+                    <?php if($_GET['tri']=='3'){?>
             <div class="btn-group">
-                <a href="mongroupe.php?groupe=<?php echo $_GET['groupe']; ?>"><button type="button" name="tri" value="all" class="btn btn-primary active">Tous</button></a>
-                <a href="mongroupe.php?groupe=<?php echo $_GET['groupe'].'&tri=1'; ?>"><button type="button" name="tri" value="restau" class="btn btn-primary active">Se restaurer</button></a>
-                <a href="mongroupe.php?groupe=<?php echo $_GET['groupe'].'&tri=2'; ?>"><button type="button" name="tri" value="sport" class="btn btn-primary active">Faire du sport</button></a>
+                <a href="mongroupe.php?groupe=<?php echo $_GET['groupe']; ?>"><button type="button" name="tri" value="all" class="btn btn-primary">Tous</button></a>
+                <a href="mongroupe.php?groupe=<?php echo $_GET['groupe'].'&tri=1'; ?>"><button type="button" name="tri" value="restau" class="btn btn-primary">Se restaurer</button></a>
+                <a href="mongroupe.php?groupe=<?php echo $_GET['groupe'].'&tri=2'; ?>"><button type="button" name="tri" value="sport" class="btn btn-primary">Faire du sport</button></a>
                 <a href="mongroupe.php?groupe=<?php echo $_GET['groupe'].'&tri=3'; ?>"><button type="button" name="tri" value="sortir" class="btn btn-primary active">Sortir</button></a>
             </div>
+            <?php }elseif($_GET['tri']=='2'){ ?>
+                <div class="btn-group">
+                <a href="mongroupe.php?groupe=<?php echo $_GET['groupe']; ?>"><button type="button" name="tri" value="all" class="btn btn-primary">Tous</button></a>
+                <a href="mongroupe.php?groupe=<?php echo $_GET['groupe'].'&tri=1'; ?>"><button type="button" name="tri" value="restau" class="btn btn-primary">Se restaurer</button></a>
+                <a href="mongroupe.php?groupe=<?php echo $_GET['groupe'].'&tri=2'; ?>"><button type="button" name="tri" value="sport" class="btn btn-primary active">Faire du sport</button></a>
+                <a href="mongroupe.php?groupe=<?php echo $_GET['groupe'].'&tri=3'; ?>"><button type="button" name="tri" value="sortir" class="btn btn-primary">Sortir</button></a>
+            </div>
+            <?php }elseif($_GET['tri']=='1'){ ?>
+                <div class="btn-group">
+                <a href="mongroupe.php?groupe=<?php echo $_GET['groupe']; ?>"><button type="button" name="tri" value="all" class="btn btn-primary">Tous</button></a>
+                <a href="mongroupe.php?groupe=<?php echo $_GET['groupe'].'&tri=1'; ?>"><button type="button" name="tri" value="restau" class="btn btn-primary active">Se restaurer</button></a>
+                <a href="mongroupe.php?groupe=<?php echo $_GET['groupe'].'&tri=2'; ?>"><button type="button" name="tri" value="sport" class="btn btn-primary">Faire du sport</button></a>
+                <a href="mongroupe.php?groupe=<?php echo $_GET['groupe'].'&tri=3'; ?>"><button type="button" name="tri" value="sortir" class="btn btn-primary">Sortir</button></a>
+            </div>
+
+            <?php }}else{ ?>
+                <div class="btn-group">
+                <a href="mongroupe.php?groupe=<?php echo $_GET['groupe']; ?>"><button type="button" name="tri" value="all" class="btn btn-primary active">Tous</button></a>
+                <a href="mongroupe.php?groupe=<?php echo $_GET['groupe'].'&tri=1'; ?>"><button type="button" name="tri" value="restau" class="btn btn-primary">Se restaurer</button></a>
+                <a href="mongroupe.php?groupe=<?php echo $_GET['groupe'].'&tri=2'; ?>"><button type="button" name="tri" value="sport" class="btn btn-primary">Faire du sport</button></a>
+                <a href="mongroupe.php?groupe=<?php echo $_GET['groupe'].'&tri=3'; ?>"><button type="button" name="tri" value="sortir" class="btn btn-primary">Sortir</button></a>
+            </div>
+                <?php } ?>
+
         </div>
     </div>
 
@@ -150,7 +147,7 @@ $tabpair = [];
         <div class="no-gutter image">
         
         <img class="Heart" src="medias/like_empty.png" onmouseover="this.src='medias/like_full.png'"onmouseout="this.src='medias/like_empty.png'">
-       <a href="evenement.php?id=<?php echo $value['id_evenement']; ?>"> <img src="article/imagearticle/<?php echo $value['id_evenement']; ?>.png" alt="Norway" style="width:100%;">
+       <a href="evenement.php?id=<?php echo $value['id_evenement']; ?>"> <img src="imagearticle/<?php echo $value['id_evenement']; ?>.png" alt="Norway" style="width:100%;">
         </a>
         <div class="text-block"> 
         <h4><?php echo $value['nom']; ?></h4>
@@ -168,7 +165,7 @@ $tabpair = [];
     
         <img class="Heart" src="medias/like_empty.png" onmouseover="this.src='medias/like_full.png'"onmouseout="this.src='medias/like_empty.png'">
         <a href="evenement.php?id=<?php echo $value['id_evenement']; ?>">
-        <img src="article/imagearticle/<?php echo $value['id_evenement']; ?>.png" alt="Norway" style="width:100%;">
+        <img src="imagearticle/<?php echo $value['id_evenement']; ?>.png" alt="Norway" style="width:100%;">
         </a>
         <div class="text-block"> 
         <h4><?php echo $value['nom']; ?></h4>
