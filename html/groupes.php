@@ -1,4 +1,8 @@
-<!-- <?php
+<?php
+
+error_reporting(E_ALL);
+ini_set("display_errors",1);
+
 
     include_once "../classes/Database.php";
     include_once "../classes/Users.php";
@@ -21,7 +25,8 @@
         header("location: index.php");
 
     }
-?> -->
+
+?> 
 <html>
     <head>
         <meta charset="utf-8">
@@ -47,7 +52,7 @@
         <title>Groupes</title>
     </head>
     <body>
-        <?php include_once "header.php" ?>
+        <?php  include_once "header.php"; ?>
 
 
 <div class="no-gutter">
@@ -58,7 +63,7 @@
             <form method="post" id="forminscription" action="creergroupe.php" enctype="multipart/form-data">
                 <input class="form-control event" name="nomgroupe" type="text" id="Family_Name" placeholder="Nom du Groupe" /><br>
                 <input class="form-control event" name="descgroupe" type="text" id="Family_Name" placeholder="Description du groupe" style="height:50px;" /><br>
-                <input type="hidden" name="id_user" value="<?php echo  $user->get_id(); ?>">
+                <input type="hidden" name="id_user" value="<?php // echo  $user->get_id(); ?>">
                 <button id="boutton_creation" type="submit" class="btn btn-success">Creer</button>
             </form>
 
@@ -80,9 +85,9 @@
   <div class="column">
     <div class="no-gutter">
         <img src="medias/groupe.png" alt="Norway" style="width:100%;">
-        <a href="mongroupe.php?groupe=<?php echo $value['id_groupe']; ?>">
+        <a href="mongroupe.php?groupe=<?php  echo $value['id_groupe']; ?>">
              <div class="text-block"> 
-                 <h4><?php echo $value['nom']; ?></h4>
+                 <h4><?php  echo $value['nom']; ?></h4>
              </div>
         </a>
     </div>
@@ -97,7 +102,6 @@
     <h1> Groupes qui pourraient vous interesser :</h1>
 <div class="row"> 
 
-
 <?php
 
         $all_groups = $user->get_all_groups();
@@ -108,7 +112,7 @@
   <div class="column">
     <div class="no-gutter">
         <img src="medias/groupe.png" alt="Norway" style="width:100%;">
-        <a href="mongroupe.php?groupe=<?php echo $value['id_groupe']; ?>">
+        <a href="mongroupe.php?groupe=<?php  echo $value['id_groupe']; ?>">
              <div class="text-block"> 
                  <h4><?php echo $value['nom']; ?></h4>
              </div>
