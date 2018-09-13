@@ -77,6 +77,18 @@ Class User {
 
     }
 
+    public function get_all_groups(){
+        
+        $pdo = database::connect();
+
+        $statement= $pdo->prepare("SELECT * FROM groupes g JOIN membres m ON m.id_groupe=g.id_groupe WHERE m.id_utilisateur != :id_u");
+        $statement->execute(array(':id_u'=>$this->id));
+
+        $result = $statement->fetchAll(PDO::FETCH_ASSOC);
+
+        return $result;
+
+    }
 
     public function get_id(){
         return $this->id;

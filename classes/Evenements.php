@@ -76,4 +76,30 @@ class Evenements {
 
     }
 
+
+    public static function get_all_articles(){
+
+        $pdo = database::connect();
+
+        $statement = $pdo->prepare("SELECT * from articles e ORDER BY e.date");
+        $statement->execute();
+
+        $results = $statement->fetchAll(PDO::FETCH_ASSOC);
+            
+        return $results;
+    }
+
+    public static function get_specific_articles($tri){
+
+        $pdo = database::connect();
+        $statement = $pdo->prepare("SELECT * from articles WHERE sujet = :id_theme ORDER BY date");
+        $statement->execute(array(':id_theme'=>$tri));
+
+        $results = $statement->fetchAll(PDO::FETCH_ASSOC);
+
+        return $results;
+
+    }
+
+
 }
