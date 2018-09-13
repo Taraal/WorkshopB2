@@ -68,37 +68,9 @@ function afficher_coeur($id_envent)
 </head>
 
 <body>
+    
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="javascript:void(0)">Patatoïde</a>
-        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navb">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="navb">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="javascript:void(0)">Mes events</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="javascript:void(0)">Creer events</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="javascript:void(0)">Groupes</a>
-                </li>
-            </ul>
-
-            <div class="dropdown my-2 my-lg-0">
-                <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
-                    <?php echo $user->get_nom(), " ", $user->get_prenom(); ?>
-                </button>
-                <div class="dropdown-menu">
-                    <a class="dropdown-item" href="profil.php">Mon profil</a>
-                    <a class="dropdown-item" href="index.php">Se deconnecter</a>
-                </div>
-            </div>
-
-    </nav>
+    <?php include_once("navbar.php"); ?>
 
     <div class="no-gutter">
         <div class="row">
@@ -163,20 +135,22 @@ for ($i = 0; $i < count($results); $i++) {
                 <?php
                     foreach ($tabpair as $key => $value) {
                 ?>
-                <a href="aime_evenement.php?id_event=<?php echo $value['id_evenement']; ?>">
-                        <?php 
-                        $img = afficher_coeur($value['id_evenement']);
-                        echo $img; ?>
-                    </a>
-                <div class="no-gutter image">                    
+                <div class="events">
+                    <a href="aime_evenement.php?id_event=<?php echo $value['id_evenement']; ?>">
+                            <?php 
+                            $img = afficher_coeur($value['id_evenement']);
+                            echo $img; ?>
+                        </a>
+                    <div class="no-gutter image">                    
 
-                    <a href="evenement.php?id=<?php echo $value['id_evenement']; ?>"> <img src="article/imagearticle/<?php echo $value['id_evenement']; ?>.png"
-                            alt="Norway" style="width:100%;">
-                    </a>
-                    <div class="text-block">
-                        <h4>
-                            <?php echo $value['nom']; ?>
-                        </h4>
+                        <a href="evenement.php?id=<?php echo $value['id_evenement']; ?>"> <img src="article/imagearticle/<?php echo $value['id_evenement']; ?>.png"
+                                alt="Norway" style="width:100%;">
+                        </a>
+                        <div class="text-block">
+                            <h4>
+                                <?php echo $value['nom']; ?>
+                            </h4>
+                        </div>
                     </div>
                 </div>
 
@@ -188,6 +162,7 @@ for ($i = 0; $i < count($results); $i++) {
                 <?php
                     foreach ($tabimpair as $key => $value) {
                 ?>
+                <div class="events">
                 <a href="aime_evenement.php?id_event=<?php echo $value['id_evenement']; ?>">
                         <?php 
                         $img = afficher_coeur($value['id_evenement']);
@@ -204,6 +179,7 @@ for ($i = 0; $i < count($results); $i++) {
                         </h4>
                     </div>
                 </div>
+                    </div>
 
                 <?php 
 } ?>
