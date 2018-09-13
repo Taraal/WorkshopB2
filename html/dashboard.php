@@ -105,8 +105,15 @@ function afficher_coeur($id_envent)
             <div class="col-3">
                 <div class="boutonchoix">
                     <div class="btn-group">
-                        <button type="button" class="btn btn-primary active">Evenement</button>
-                        <button type="button" class="btn btn-primary">Article</button>
+                    <a href="dashboard.php?<?php
+                            if(isset($_GET['tri'])) echo"tri=" . $_GET["tri"] . "&"; 
+                        ?>sort=event">
+                            <button type="button" class="btn btn-primary active">Evenement</button></a>
+    
+                            <a href="dashboard.php?<?php
+                            if(isset($_GET['tri'])) echo"tri=" . $_GET["tri"] . "&"; 
+                        ?>sort=article">
+                            <button type="button" class="btn btn-primary">Article</button></a>
                     </div>
                 </div>
 
@@ -115,12 +122,14 @@ function afficher_coeur($id_envent)
             <div class="col-6">
                 <div class="boutonchoix">
                     <div class="btn-group">
-                        <a href="dashboard.php"><button type="button" name="tri" value="all" class="btn btn-primary active">Tous</button></a>
-                        <a href="dashboard.php?tri=1"><button type="button" name="tri" value="restau" class="btn btn-primary active">Se
+                    <a href="dashboard.php?<?php
+                            if(isset($_GET['sort'])) echo"sort=" . $_GET["sort"];?>                            
+"><button type="button" name="tri" value="all" class="btn btn-primary active">Tous</button></a>
+    <a href="dashboard.php?<?php if(isset($_GET['sort'])) echo"sort=" . $_GET["sort"] . "&";?>tri=1"><button type="button" name="tri" value="restau" class="btn btn-primary active">Se
                                 restaurer</button></a>
-                        <a href="dashboard.php?tri=2"><button type="button" name="tri" value="sport" class="btn btn-primary active">Faire
+                        <a href="dashboard.php?<?php if(isset($_GET['sort'])) echo"sort=" . $_GET["sort"] . "&";?>tri=2"><button type="button" name="tri" value="sport" class="btn btn-primary active">Faire
                                 du sport</button></a>
-                        <a href="dashboard.php?tri=3"><button type="button" name="tri" value="sortir" class="btn btn-primary active">Sortir</button></a>
+                        <a href="dashboard.php?<?php if(isset($_GET['sort'])) echo"sort=" . $_GET["sort"] . "&";?>tri=3"><button type="button" name="tri" value="sortir" class="btn btn-primary active">Sortir</button></a>
                     </div>
                 </div>
             </div>
@@ -134,6 +143,9 @@ function afficher_coeur($id_envent)
 
     <?php 
 
+
+                            if(isset($_GET["sort"])){
+                                if($_GET["sort"] == "event"){
 if (isset($_GET["tri"])) {
 
     $results = Evenements::get_specific_events($_GET['tri']);
@@ -212,7 +224,83 @@ for ($i = 0; $i < count($results); $i++) {
         </div>
     </div>
 
+<?php
+                                }
+                                elseif($_GET["sort"] == "article"){
 
+
+if (isset($_GET["tri"])) {
+
+    $results = Evenements::get_specific_articles($_GET['tri']);
+
+} else {
+    $results = Evenements::get_all_articles();
+}
+
+$i2 = 0;
+$i3 = 0;
+$tabimpair = [];
+$tabpair = [];
+for ($i = 0; $i < count($results); $i++) {
+    if ($i % 2 == 0) {
+        $tabpair[$i2] = $results[$i];
+        $i2++;
+    } elseif ($i % 2 != 0) {
+        $tabimpair[$i3] = $results[$i];
+        $i3++;
+    }
+}
+?>
+    <div class="container">
+        <div class="row">
+            <div class="column">
+                <?php
+                    foreach ($tabpair as $key => $value) {
+                ?>
+                <div class="no-gutter image">                    
+
+                    <a href="article/article.php?id=<?php echo $value['id_article']; ?>"> <img src="article/imagearticles/<?php echo $value['id_article']; ?>.png"
+                            alt="Norway" style="width:100%;">
+                    </a>
+                    <div class="text-block">
+                        <h4>
+                            <?php echo $value['titre']; ?>
+                        </h4>
+                    </div>
+                </div>
+
+                <?php 
+                } ?>
+            </div>
+
+            <div class="column">
+                <?php
+                    foreach ($tabimpair as $key => $value) {
+                ?>
+                <div class="no-gutter image">
+
+                    <a href="article/article.php?id=<?php echo $value['id_article']; ?>">
+                        <img src="article/imagearticles/<?php echo $value['id_article']; ?>.png" alt="Norway" style="width:100%;">
+                    </a>
+                    <div class="text-block">
+                        <h4>
+                            <?php echo $value['titre']; ?>
+                        </h4>
+                    </div>
+                </div>
+
+                <?php 
+} ?>
+            </div>
+
+        </div>
+    </div>
+<?php
+                                }
+  
+  
+                            }
+?>
 
 
 </body>
