@@ -21,6 +21,7 @@
         header("location: index.php");
 
     }
+
 ?>
 
 <html>
@@ -42,24 +43,35 @@
 
 
         <!-- CSS -->
-        <link rel="stylesheet" type="text/css" href="css/connexion.css">
+        <link rel="stylesheet" type="text/css" href="css/profil.css">
 
         <title>Profil</title>
     </head>
     <body>
         <?php include_once "header.php"?>
-       
+        
+                    <div class="container">
+                        <div class="row">
+                            <div id="profil">
+                                <img id="photo_profile" src="medias/profile.png"><br>
+                                <div class="col">
+                                <form method="post" id="forminscription" action="modifprofil.php" enctype="multipart/form-data">
+                                        <input class="form-control event input" name="Family_Name" type="text" id="Family_Name" placeholder="<?php echo $user->get_nom();?>" /><br>
+                                        <input class="form-control event input" name="Name" type="text" id="Name" placeholder="<?php echo $user->get_prenom();?>" /><br>
+                                        <input class="form-control event input" name="Mail" type="text" id="Mail" placeholder="<?php echo $user->get_email();?>" />  <br>
+                                        <input class="form-control event input" name="daten" type="text" id="daten" placeholder="<?php echo $user->get_date();?>" />  
+                                    <div id="les_buttons">  
+                                        <button type="submit" class="btn btn-success">Sauvegarder</button>
+                                              
+                                    </div>  
+                                </form>
 
-        <div id="profil">
-            <img id="photo_profile" src="medias/profile.png"><br>
-            <input class="input" name="Family_Name" type="text" id="Family_Name" placeholder="<?php echo $user->get_nom();?>" /><br>
-            <input class="input" name="Name" type="text" id="Name" placeholder="<?php echo $user->get_prenom();?>" /><br>
-            <input class="input" name="Mail" type="text" id="Mail" placeholder="<?php echo $user->get_email();?>" />  <br>
-            <input class="input" name="Mail" type="text" id="Mail" placeholder="<?php echo $user->get_date();?>" />  
-            <div id="les_buttons">  
-                <button type="button" class="btn btn-success">Sauvegarder</button>
-                <button type="button" class="btn btn-danger">Annuler</button>       
-            </div>  
-        </div>
+                                <form method="post" id="forminscription" action="redirection.php" enctype="multipart/form-data">
+                                    <button type="submit" class="btn btn-danger">Annuler</button> 
+                                </form>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
     </body>
 </html>

@@ -1,0 +1,56 @@
+html,body{
+		background-color: #014955 !important;
+}
+
+
+
+.container{
+	text-align: center;
+}
+
+
+
+#profil{
+	border-radius: 5px;
+	font-size: 20px;
+	margin:0 auto;
+
+
+	max-width: 1000px;
+	padding:5px;
+	position: inline-block;
+	
+}
+#photo_profile{
+	position: inline;
+	left:75%;
+	border-radius:60%;
+	border-style: solid;
+	border-width: 4px;
+	border-color: #3B9A9C;
+}
+#les_buttons{
+	margin-top: 20px;
+}
+.input{
+	margin: 2px;
+	margin-left:10px;
+	min-width: 300px;
+}
+
+form{
+	margin-right: 20px;
+}
+
+.col{
+	background-color: white !important;
+	border-radius: 5px;
+	padding-top: 40px;
+	margin-top: 20px;
+	padding-bottom: 20px;
+
+}
+
+button{
+	margin-bottom: 30px;
+}

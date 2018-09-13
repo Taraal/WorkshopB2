@@ -1,4 +1,4 @@
-<?php
+<!-- <?php
 
     include_once "../classes/Database.php";
     include_once "../classes/Users.php";
@@ -21,7 +21,7 @@
         header("location: index.php");
 
     }
-?>
+?> -->
 <html>
     <head>
         <meta charset="utf-8">
@@ -41,13 +41,229 @@
 
 
         <!-- CSS -->
-        <link rel="stylesheet" type="text/css" href="css/connexion.css">
+        
         <link rel="stylesheet" type="text/css" href="css/groupes.css">
 
         <title>Groupes</title>
     </head>
     <body>
         <?php include_once "header.php" ?>
+
+
+<div class="no-gutter">
+    <div class="row">
+        <div class="col-2">
+            <div class="container creer">
+            <h3>Creer groupe</h3>
+            <form method="post" id="forminscription" action="creergroupe.php" enctype="multipart/form-data">
+                <input class="form-control event" name="nomgroupe" type="text" id="Family_Name" placeholder="Nom du Groupe" /><br>
+                <input class="form-control event" name="descgroupe" type="text" id="Family_Name" placeholder="Description du groupe" style="height:50px;" /><br>
+                <input type="hidden" name="id_user" value="<?php echo  $user->get_id(); ?>">
+                <button id="boutton_creation" type="submit" class="btn btn-success">Creer</button>
+            </form>
+
+            </div>
+        </div>
+<div class="col-10">
+<div class="container">
+    <h1> Mes groupes :</h1>
+<div class="row"> 
+
+  <div class="column">
+    <div class="no-gutter">
+        <img src="medias/groupe.png" alt="Norway" style="width:100%;">
+        <div class="text-block"> 
+            <h4>Nom groupe</h4>
+        </div>
+    </div>
+
+    <div class="no-gutter">
+        <img src="medias/groupe.png" alt="Norway" style="width:100%;">
+        <div class="text-block"> 
+            <h4>Nom groupe</h4>
+        </div>
+    </div>
+
+
+    <div class="no-gutter">
+        <img src="medias/groupe.png" alt="Norway" style="width:100%;">
+        <div class="text-block"> 
+            <h4>Nom groupe</h4>
+        </div>
+    </div>
+
+
+    <div class="no-gutter">
+        <img src="medias/groupe.png" alt="Norway" style="width:100%;">
+        <div class="text-block"> 
+            <h4>Nom groupe</h4>
+        </div>
+    </div>
+
+
+  </div>
+  <div class="column">
+    <div class="no-gutter">
+        <img src="medias/groupe.png" alt="Norway" style="width:100%;">
+        <div class="text-block"> 
+            <h4>Nom groupe</h4>
+        </div>
+    </div>
+
+
+    <div class="no-gutter">
+        <img src="medias/groupe.png" alt="Norway" style="width:100%;">
+        <div class="text-block"> 
+            <h4>Nom groupe</h4>
+        </div>
+    </div>
+
+
+    <div class="no-gutter">
+        <img src="medias/groupe.png" alt="Norway" style="width:100%;">
+        <div class="text-block"> 
+            <h4>Nom groupe</h4>
+        </div>
+    </div>
+
+  </div> 
+  <div class="column">
+    <div class="no-gutter">
+        <img src="medias/groupe.png" alt="Norway" style="width:100%;">
+        <div class="text-block"> 
+            <h4>Nom groupe</h4>
+        </div>
+    </div>
+
+
+    <div class="no-gutter">
+        <img src="medias/groupe.png" alt="Norway" style="width:100%;">
+        <div class="text-block"> 
+            <h4>Nom groupe</h4>
+        </div>
+    </div>
+
+
+    <div class="no-gutter">
+        <img src="medias/groupe.png" alt="Norway" style="width:100%;">
+        <div class="text-block"> 
+            <h4>Nom groupe</h4>
+        </div>
+    </div>
+
+  </div>
+</div>
+</div>
+
+<div class="container bas">
+    <h1> Groupes qui pourraient vous interesser :</h1>
+<div class="row"> 
+
+  <div class="column">
+    <div class="no-gutter">
+        <img src="medias/groupe.png" alt="Norway" style="width:100%;">
+        <div class="text-block"> 
+            <h4>Nom groupe</h4>
+        </div>
+    </div>
+
+    <div class="no-gutter">
+        <img src="medias/groupe.png" alt="Norway" style="width:100%;">
+        <div class="text-block"> 
+            <h4>Nom groupe</h4>
+        </div>
+    </div>
+
+
+    <div class="no-gutter">
+        <img src="medias/groupe.png" alt="Norway" style="width:100%;">
+        <div class="text-block"> 
+            <h4>Nom groupe</h4>
+        </div>
+    </div>
+
+
+    <div class="no-gutter">
+        <img src="medias/groupe.png" alt="Norway" style="width:100%;">
+        <div class="text-block"> 
+            <h4>Nom groupe</h4>
+        </div>
+    </div>
+
+
+  </div>
+  <div class="column">
+    <div class="no-gutter">
+        <img src="medias/groupe.png" alt="Norway" style="width:100%;">
+        <div class="text-block"> 
+            <h4>Nom groupe</h4>
+        </div>
+    </div>
+
+
+    <div class="no-gutter">
+        <img src="medias/groupe.png" alt="Norway" style="width:100%;">
+        <div class="text-block"> 
+            <h4>Nom groupe</h4>
+        </div>
+    </div>
+
+
+    <div class="no-gutter">
+        <img src="medias/groupe.png" alt="Norway" style="width:100%;">
+        <div class="text-block"> 
+            <h4>Nom groupe</h4>
+        </div>
+    </div>
+
+    <div class="no-gutter">
+        <img src="medias/groupe.png" alt="Norway" style="width:100%;">
+        <div class="text-block"> 
+            <h4>...</h4>
+        </div>
+    </div>
+
+  </div> 
+  <div class="column">
+    <div class="no-gutter">
+        <img src="medias/groupe.png" alt="Norway" style="width:100%;">
+        <div class="text-block"> 
+            <h4>Nom groupe</h4>
+        </div>
+    </div>
+
+
+    <div class="no-gutter">
+        <img src="medias/groupe.png" alt="Norway" style="width:100%;">
+        <div class="text-block"> 
+            <h4>Nom groupe</h4>
+        </div>
+    </div>
+
+
+    <div class="no-gutter">
+        <img src="medias/groupe.png" alt="Norway" style="width:100%;">
+        <div class="text-block"> 
+            <h4>Nom groupe</h4>
+        </div>
+    </div>
+
+  </div>
+</div>
+</div>
+
+</div>
+</div>
+</div>
+
+
+
+
+
+
+
+
+<!-- 
         <div id="create_group">
             <div class="Titles">Creer Groupe</div><br>
             <input class="input" name="Family_Name" type="text" id="Family_Name" placeholder="Nom du Groupe" /><br>
@@ -86,6 +302,6 @@
                 <div class="person">Personne 4</div>
                 <div class="person">Personne 5</div>
             </div>
-        </div>
+        </div> -->
     </body>
 </html>
