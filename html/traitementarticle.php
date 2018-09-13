@@ -2,7 +2,7 @@
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
-include_once "../../classes/Database.php";
+include_once "../classes/Database.php";
 
 session_start();
 
@@ -10,31 +10,32 @@ session_start();
 
 $db = Database::connect();
 
+$date = date("Y-m-d");
 
-$req = $db->prepare("INSERT INTO evenements (id_evenement, id_proprio, id_theme, nom, date, heure, description, lieu) VALUES (NULL, :id_proprio, :id_theme, :nom, :date, :time, :description, :place)");
-$req->bindParam(':nom', $_POST['nom']);
-$req->bindParam(':id_proprio', $_SESSION['id']);
-$req->bindParam(':id_theme', $_POST['type']);
-$req->bindParam(':date', $_POST['date']);
-$req->bindParam(':time', $_POST['time']);
-$req->bindParam(':description', $_POST['description']);
-$req->bindParam(':place', $_POST['place']);
+$req = $db->prepare("INSERT INTO articles (id_article, id_auteur, titre, texte, date, sujet) VALUES (NULL, :auteur, :titre, :texte, :date, :sujet)");
+$req->bindParam(':titre', $_POST['nom']);
+$req->bindParam(':auteur', $_SESSION['id']);
+$req->bindParam(':sujet', $_POST['type']);
+$req->bindParam(':date', $date) ;
+$req->bindParam(':texte', $_POST['description']);
 $req->execute();
 
-var_dump($_POST['time']);
+
 var_dump($req);
 
 $id=$db->lastInsertId();
 
+
 $idpersonne=$_SESSION['id'];
+var_dump($id);
 
 
 
 
 
-	$banane='imagearticle/'.$id.'.png';
+	$banane='imagearticles/'.$id.'.png';
 
-    $req4=$db->prepare("INSERT INTO imageevent(chemin,id_image) VALUES (:lien,NULL)");
+    $req4=$db->prepare("INSERT INTO imagearticle(chemin,id_image) VALUES (:lien,NULL)");
     $req4->bindParam(":lien",$banane);
     $req4->execute();
 
@@ -54,7 +55,7 @@ $image_sizes = getimagesize($_FILES['icone']['tmp_name']);
 //Créer un identifiant difficile à deviner
   $nom = md5(uniqid(rand(), true));
 
-  $nom = 'imagearticle/'.$id.'.png';
+  $nom = 'imagearticles/'.$id.'.png';
 $resultat = move_uploaded_file($_FILES['icone']['tmp_name'],$nom);
 if ($resultat) echo "Transfert réussi";
 
@@ -71,7 +72,7 @@ $req5->execute();
 
 
 
-header('Location:../accueil.php?id='.$idpersonne.'');
+/*header('Location:../accueil.php?id='.$idpersonne.'');*/
 
 
 

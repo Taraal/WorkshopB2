@@ -24,13 +24,14 @@ session_start();
 
 
     <!-- CSS -->
-    <link rel="stylesheet" type="text/css" href="../css/creationarticle.css">
+    <link rel="stylesheet" type="text/css" href="css/creationarticle.css">
 
     <title>Creation article</title>
 
   </head>
 
     <body>
+            <?php include_once("header.php"); ?>
 
         <h1>Patatoïde</h1>
 

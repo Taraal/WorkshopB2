@@ -70,7 +70,7 @@ function afficher_coeur($id_envent)
 <body>
     
 
-    <?php include_once("navbar.php"); ?>
+    <?php include_once("header.php"); ?>
 
     <div class="no-gutter">
         <div class="row">

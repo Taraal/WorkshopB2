@@ -29,7 +29,7 @@ if (isset($_POST['mail']) && isset($_POST['date']) && isset($_POST['password']) 
     
         $_SESSION['id'] = $db->lastInsertId();
 
-    header("location: ../accueil.php");
+    header("location: ../dashboard.php");
     }
 
 

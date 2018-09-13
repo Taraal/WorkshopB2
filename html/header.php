@@ -25,7 +25,7 @@ $pseudo=$_SESSION['prenom'].' '.$_SESSION['nom'];
   <div class="collapse navbar-collapse" id="navb">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item">
-        <a class="nav-link" href="javascript:void(0)">Mes events</a>
+        <a class="nav-link" href="mesevents.php">Mes events</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="groupes.php">Groupes</a>
@@ -38,20 +38,20 @@ $pseudo=$_SESSION['prenom'].' '.$_SESSION['nom'];
     		Creer événement/article
   		</button>
   		<div class="dropdown-menu">
-    		<a class="dropdown-item" href="article/creationarticle.php">Creer événement</a>
-    		<a class="dropdown-item" href="article/creaarticle.php">Creer article</a>
+    		<a class="dropdown-item" href="creationarticle.php">Creer événement</a>
+    		<a class="dropdown-item" href="creaarticle.php">Creer article</a>
   </div>
 </div>
       
     </ul>
 
     <div class="dropdown my-2 my-lg-0">
-  		<button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+  		<button type="button" class="btn btn-primary dropdown-toggle john" data-toggle="dropdown">
     		<?php echo $pseudo;?>
   		</button>
   	<div class="dropdown-menu">
-    	<a class="dropdown-item" href="profil.php">Mon profil</a>
-    	<a class="dropdown-item" href="deconnexion.php">Se deconnecter</a>
+    	<a class="dropdown-item smith" href="profil.php">Mon profil</a>
+    	<a class="dropdown-item smith" href="deconnexion.php">Se deconnecter</a>
   </div>
 </div>
 

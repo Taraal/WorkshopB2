@@ -68,7 +68,7 @@ function afficher_coeur($id_envent)
 </head>
 
 <body>
-    <?php include_once("navbar.php"); ?>
+    <?php include_once("header.php"); ?>
     <?php 
     $db = Database::connect();
     $req = $db->prepare("SELECT * FROM evenements e join participe p on e.id_evenement=p.id_evenement where p.id_utilisateur=:id_user ");
@@ -78,14 +78,25 @@ function afficher_coeur($id_envent)
     $i2 = 0;
     $i3 = 0;
     $tab = [];
+
+
     for ($i = 0; $i < count($result); $i++) {
-        $tab[$i] = $result[$i];
+    if ($i % 2 == 0) {
+        $tabpair[$i2] = $result[$i];
+        $i2++;
+    } elseif ($i % 2 != 0) {
+        $tabimpair[$i3] = $result[$i];
+        $i3++;
     }
+}
+
     ?>
     <div id="mes_events">
+    <div class="container">
+    <div class="row">
     <div class="column">
                 <?php
-                foreach ($tab as $key => $value) {
+                foreach ($tabpair as $key => $value) {
                     ?>
                 <a href="aime_evenement.php?id_event=<?php echo $value['id_evenement']; ?>">
                         <?php 
@@ -107,7 +118,33 @@ function afficher_coeur($id_envent)
                 <?php 
             } ?>
     </div>
+
+    <div class="column">
+                <?php
+                    foreach ($tabimpair as $key => $value) {
+                ?>
+                <a href="aime_evenement.php?id_event=<?php echo $value['id_evenement']; ?>">
+                        <?php 
+                        $img = afficher_coeur($value['id_evenement']);
+                        echo $img; ?>
+                    </a>
+                <div class="no-gutter image">                    
+
+                    <a href="evenement.php?id=<?php echo $value['id_evenement']; ?>"> <img src="article/imagearticle/<?php echo $value['id_evenement']; ?>.png"
+                            alt="Norway" style="width:100%;">
+                    </a>
+                    <div class="text-block">
+                        <h4>
+                            <?php echo $value['nom']; ?>
+                        </h4>
+                    </div>
+                </div>
+
+                <?php 
+} ?>
+            </div>
     </div>
+</div></div>
 
 
 </body>

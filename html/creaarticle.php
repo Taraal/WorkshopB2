@@ -24,8 +24,7 @@ session_start();
 
 
     
-    <link rel="stylesheet" type="text/css" href="../css/creationarticle.css">
-     <link rel="stylesheet" type="text/css" href="../css/header.css">
+    <link rel="stylesheet" type="text/css" href="css/creationarticle.css">
 
     <title>Creation article</title>
 
@@ -36,68 +35,14 @@ session_start();
         <!-- HEADER -->
 
 <?php 
-include_once "../../classes/Database.php";
-include_once "../../classes/Users.php";
+include_once "../classes/Database.php";
+include_once "../classes/Users.php";
+include_once("header.php"); 
 
 
 $pseudo=$_SESSION['prenom'].' '.$_SESSION['nom'];
 
 ?>
-
-
-
-        
-   
-
-
-
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <a class="navbar-brand" href="dashboard.php">Patatoïde</a>
-  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navb">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-
-  <div class="collapse navbar-collapse" id="navb">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item">
-        <a class="nav-link" href="javascript:void(0)">Mes events</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="groupes.php">Groupes</a>
-      </li>
-
-
-
-      <div class="dropdown my-2 my-lg-0 ">
-        <button type="button" class="btn btn-default dropdown-toggle menu" data-toggle="dropdown">
-            Creer événement/article
-        </button>
-        <div class="dropdown-menu">
-            <a class="dropdown-item" href="article/creationarticle.php">Creer événement</a>
-            <a class="dropdown-item" href="article/creaarticle.php">Creer article</a>
-  </div>
-</div>
-      
-    </ul>
-
-    <div class="dropdown my-2 my-lg-0">
-        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
-            <?php echo $pseudo;?>
-        </button>
-    <div class="dropdown-menu">
-        <a class="dropdown-item" href="profil.php">Mon profil</a>
-        <a class="dropdown-item" href="deconnexion.php">Se deconnecter</a>
-  </div>
-</div>
-
-</nav>
-
-
-
-
-
-
-
 
 
 

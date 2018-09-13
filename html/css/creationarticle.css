@@ -12,7 +12,7 @@ body{
 	margin:0px;
 	padding: 0px;
 	overflow-y: auto;
-	background-color: #014955;
+	background-color: #014955 !important;
 }
 
 
@@ -21,94 +21,64 @@ body{
 
 
 h1{
-	font-family: 'Pacifico', cursive;
-	color: white;
-	text-align: center;
-	margin-top: 2%;
-	font-size: 50px;
-	margin-bottom: 2%;
+	font-family: 'Pacifico', cursive !important;
+	color: white !important;
+	text-align: center !important;
+	margin-top: 2% !important;
+	font-size: 50px !important;
+	margin-bottom: 2% !important;
 }
 
 #form-event{
-	background-color: white;
-	border-radius: 5px;
-	padding: 45px;
+	background-color: white !important;
+	border-radius: 5px !important;
+	padding: 45px !important;
+	margin-bottom: 50px !important;
 }
 
 #form-event input{
-	margin-bottom: 15px;
+	margin-bottom: 15px !important;
 }
 
 #form-event h2{
-	margin-bottom: 30px;
+	margin-bottom: 30px !important;
 }
 
-.dropdown button{
-	background-color: white;
-	color: grey;
-	border-color: lightgrey;
-}
 
-.dropdown button:hover{
-	background-color: darkgrey;
-	color: white;
-	border-color: grey;
-}
-
-.dropdown button:focus{
-	background-color: darkgrey !important;
-	color: white;
-	border-color: grey;
-}
-
-.dropdown button:active{
-	background-color: darkgrey !important;
-	color: white;
-	border-color: grey;
-}
-
-.dropdown{
-	margin-bottom: 15px;
-}
-
-.dropdown-item{
-	margin-top: 5px;
-	margin-bottom: 5px;
-}
 
 hr{
-	margin: 0;
+	margin: 0 !important;
 }
 
 .dropdown-menu{
-	padding: 0;
+	padding: 0 !important;
 }
 
 #boutonevent{
-	margin-top: 15px;
+	margin-top: 15px !important;
 }
 
 #boutonevent{
-	margin-left: 5%;
-	padding-left: 20px;
-	padding-right: 20px;
+	margin-left: 5% !important;
+	padding-left: 20px !important;
+	padding-right: 20px !important;
 	background-color: white !important;
 	border:solid 2px #1687a7 !important;
-	color: black;
-	font-size: 20px;
-	font-family: 'Assistant', sans-serif;
+	color: black !important;
+	font-size: 20px !important;
+	font-family: 'Assistant', sans-serif !important;
 	border-radius: 15px !important;
 }
 
 #boutonevent:hover{
 	background-color: #ffffe3 !important;
-	color: black;
+	color: black !important;
 }
 
 .form-group{
-	color: grey;
+	color: grey !important;
 }
 
 .form-control{
-	color: grey;
+	color: grey !important;
 }
