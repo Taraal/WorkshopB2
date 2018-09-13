@@ -43,5 +43,17 @@ class Evenements {
 
     }
 
+    public static function get_one_event($id){
+
+        $pdo = Database::connect();
+
+        $statement = $pdo->prepare("SELECT * FROM evenements e WHERE id_evenement = :id");
+        $statement->execute(array(':id'=>$id));
+
+        return $statement->fetch();
+
+
+    }
+
 
 }

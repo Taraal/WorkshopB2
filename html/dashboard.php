@@ -68,11 +68,11 @@ if (isset($_SESSION['id'])) {
 
 <div class="dropdown my-2 my-lg-0">
   <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
-    Baptiste PAPA
+        <?php echo $user->get_nom() , " ", $user->get_prenom(); ?>
   </button>
   <div class="dropdown-menu">
-    <a class="dropdown-item" href="#">Mon profil</a>
-    <a class="dropdown-item" href="#">Se deconnecter</a>
+    <a class="dropdown-item" href="profil.php">Mon profil</a>
+    <a class="dropdown-item" href="index.php">Se deconnecter</a>
   </div>
 </div>
 
@@ -144,7 +144,8 @@ $tabpair = [];
         <div class="no-gutter image">
         
         <img class="Heart" src="medias/like_empty.png" onmouseover="this.src='medias/like_full.png'"onmouseout="this.src='medias/like_empty.png'">
-        <img src="article/imagearticle/<?php echo $value['id_evenement']; ?>.png" alt="Norway" style="width:100%;">
+       <a href="evenement.php?id=<?php echo $value['id_evenement']; ?>"> <img src="article/imagearticle/<?php echo $value['id_evenement']; ?>.png" alt="Norway" style="width:100%;">
+        </a>
         <div class="text-block"> 
         <h4><?php echo $value['nom']; ?></h4>
         </div>
@@ -160,7 +161,9 @@ $tabpair = [];
         <div class="no-gutter image">
     
         <img class="Heart" src="medias/like_empty.png" onmouseover="this.src='medias/like_full.png'"onmouseout="this.src='medias/like_empty.png'">
+        <a href="evenement.php?id=<?php echo $value['id_evenement']; ?>">
         <img src="article/imagearticle/<?php echo $value['id_evenement']; ?>.png" alt="Norway" style="width:100%;">
+        </a>
         <div class="text-block"> 
         <h4><?php echo $value['nom']; ?></h4>
         </div>
