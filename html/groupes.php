@@ -63,7 +63,7 @@ ini_set("display_errors",1);
             <form method="post" id="forminscription" action="creergroupe.php" enctype="multipart/form-data">
                 <input class="form-control event" name="nomgroupe" type="text" id="Family_Name" placeholder="Nom du Groupe" /><br>
                 <input class="form-control event" name="descgroupe" type="text" id="Family_Name" placeholder="Description du groupe" style="height:50px;" /><br>
-                <input type="hidden" name="id_user" value="<?php // echo  $user->get_id(); ?>">
+                <input type="hidden" name="id_user" value="<?php echo  $user->get_id(); ?>">
                 <button id="boutton_creation" type="submit" class="btn btn-success">Creer</button>
             </form>
 
@@ -78,10 +78,27 @@ ini_set("display_errors",1);
 
     $groups = $user->get_groups();
 
-    foreach($groups as $key => $value){
+
+$i2 = 0;
+$i3 = 0;
+$tabimpair = [];
+$tabpair = [];
+for ($i = 0; $i < count($groups); $i++) {
+    if ($i % 2 == 0) {
+        $tabpair[$i2] = $groups[$i];
+        $i2++;
+    } elseif ($i % 2 != 0) {
+        $tabimpair[$i3] = $groups[$i];
+        $i3++;
+    }
+} ?>
+<div class="container">
+    <div class="row">
+    <?php foreach($tabpair as $key => $value){
 
 
 ?>
+
   <div class="column">
     <div class="no-gutter">
         <img src="medias/groupe.png" alt="Norway" style="width:100%;">
@@ -91,11 +108,28 @@ ini_set("display_errors",1);
              </div>
         </a>
     </div>
+</div>
+
+<?php } ;
+foreach($tabimpair as $key => $value){ ?>
+
+
+
+  <div class="column">
+    <div class="no-gutter">
+        <img src="medias/groupe.png" alt="Norway" style="width:100%;">
+        <a href="mongroupe.php?groupe=<?php  echo $value['id_groupe']; ?>">
+             <div class="text-block"> 
+                 <h4><?php  echo $value['nom']; ?></h4>
+             </div>
+        </a>
+    </div></div></div>
 
 <?php } ?>
+</div>
+</div>
   </div>
-</div>
-</div>
+
 
 
 <div class="container bas">
@@ -106,9 +140,27 @@ ini_set("display_errors",1);
 
         $all_groups = $user->get_all_groups();
 
-        foreach($all_groups as $key => $value){
 
+$i4 = 0;
+$i5 = 0;
+$tabimpair2 = [];
+$tabpair2 = [];
+for ($i = 0; $i < count($all_groups); $i++) {
+    if ($i % 2 == 0) {
+        $tabpair2[$i4] = $all_groups[$i];
+        $i4++;
+    } elseif ($i % 2 != 0) {
+        $tabimpair2[$i5] = $all_groups[$i];
+        $i5++;
+    }
+}
 ?>
+<div class="container">
+    <div class="row">
+
+    <?php foreach($tabpair2 as $key => $value){
+?>
+
   <div class="column">
     <div class="no-gutter">
         <img src="medias/groupe.png" alt="Norway" style="width:100%;">
@@ -118,6 +170,25 @@ ini_set("display_errors",1);
              </div>
         </a>
     </div>
+</div>
+
+<?php 
+        }
+?>
+
+    <?php foreach($tabimpair2 as $key => $value){
+?>
+
+  <div class="column">
+    <div class="no-gutter">
+        <img src="medias/groupe.png" alt="Norway" style="width:100%;">
+        <a href="mongroupe.php?groupe=<?php  echo $value['id_groupe']; ?>">
+             <div class="text-block"> 
+                 <h4><?php echo $value['nom']; ?></h4>
+             </div>
+        </a>
+    </div>
+</div>
 
 <?php 
         }
@@ -129,7 +200,7 @@ ini_set("display_errors",1);
 </div>
 </div>
 </div>
-
+</div>
 
 
 

@@ -76,6 +76,7 @@ function afficher_coeur($id_envent)
         <div class="row">
             <div class="col-3">
                 <div class="boutonchoix">
+                    <?php if($_GET['sort']=='event'){?>
                     <div class="btn-group">
                     <a href="dashboard.php?<?php
                             if(isset($_GET['tri'])) echo"tri=" . $_GET["tri"] . "&"; 
@@ -86,23 +87,76 @@ function afficher_coeur($id_envent)
                             if(isset($_GET['tri'])) echo"tri=" . $_GET["tri"] . "&"; 
                         ?>sort=article">
                             <button type="button" class="btn btn-primary">Article</button></a>
-                    </div>
+                    </div> <?php } ?>
+
+                    <?php if($_GET['sort']=='article'){?>
+                    <div class="btn-group">
+                    <a href="dashboard.php?<?php
+                            if(isset($_GET['tri'])) echo"tri=" . $_GET["tri"] . "&"; 
+                        ?>sort=event">
+                            <button type="button" class="btn btn-primary">Evenement</button></a>
+    
+                            <a href="dashboard.php?<?php
+                            if(isset($_GET['tri'])) echo"tri=" . $_GET["tri"] . "&"; 
+                        ?>sort=article">
+                            <button type="button" class="btn btn-primary active">Article</button></a>
+                    </div> <?php }; ?>
                 </div>
 
             </div>
 
             <div class="col-6">
                 <div class="boutonchoix">
+                    <?php if(isset($_GET['tri'])){ ?>
+                    <?php if($_GET['tri']=='3'){?>
+                    <div class="btn-group">
+                    <a href="dashboard.php?<?php
+                            if(isset($_GET['sort'])) echo"sort=" . $_GET["sort"];?>                            
+"><button type="button" name="tri" value="all" class="btn btn-primary ">Tous</button></a>
+    <a href="dashboard.php?<?php if(isset($_GET['sort'])) echo"sort=" . $_GET["sort"] . "&";?>tri=1"><button type="button" name="tri" value="restau" class="btn btn-primary">Se restaurer</button></a>
+                        <a href="dashboard.php?<?php if(isset($_GET['sort'])) echo"sort=" . $_GET["sort"] . "&";?>tri=2"><button type="button" name="tri" value="sport" class="btn btn-primary ">Faire
+                                du sport</button></a>
+                        <a href="dashboard.php?<?php if(isset($_GET['sort'])) echo"sort=" . $_GET["sort"] . "&";?>tri=3"><button type="button" name="tri" value="sortir" class="btn btn-primary active">Sortir</button></a>
+                    </div>
+                <?php }elseif($_GET['tri']=='2'){ ?>
+
+                
+                    <div class="btn-group">
+                    <a href="dashboard.php?<?php
+                            if(isset($_GET['sort'])) echo"sort=" . $_GET["sort"];?>                            
+"><button type="button" name="tri" value="all" class="btn btn-primary ">Tous</button></a>
+    <a href="dashboard.php?<?php if(isset($_GET['sort'])) echo"sort=" . $_GET["sort"] . "&";?>tri=1"><button type="button" name="tri" value="restau" class="btn btn-primary">Se restaurer</button></a>
+                        <a href="dashboard.php?<?php if(isset($_GET['sort'])) echo"sort=" . $_GET["sort"] . "&";?>tri=2"><button type="button" name="tri" value="sport" class="btn btn-primary active">Faire
+                                du sport</button></a>
+                        <a href="dashboard.php?<?php if(isset($_GET['sort'])) echo"sort=" . $_GET["sort"] . "&";?>tri=3"><button type="button" name="tri" value="sortir" class="btn btn-primary">Sortir</button></a>
+                    </div>
+                <?php }elseif($_GET['tri']=='1'){ ?>
+
+                
+                    <div class="btn-group">
+                    <a href="dashboard.php?<?php
+                            if(isset($_GET['sort'])) echo"sort=" . $_GET["sort"];?>                            
+"><button type="button" name="tri" value="all" class="btn btn-primary ">Tous</button></a>
+    <a href="dashboard.php?<?php if(isset($_GET['sort'])) echo"sort=" . $_GET["sort"] . "&";?>tri=1"><button type="button" name="tri" value="restau" class="btn btn-primary active">Se restaurer</button></a>
+                        <a href="dashboard.php?<?php if(isset($_GET['sort'])) echo"sort=" . $_GET["sort"] . "&";?>tri=2"><button type="button" name="tri" value="sport" class="btn btn-primary">Faire
+                                du sport</button></a>
+                        <a href="dashboard.php?<?php if(isset($_GET['sort'])) echo"sort=" . $_GET["sort"] . "&";?>tri=3"><button type="button" name="tri" value="sortir" class="btn btn-primary">Sortir</button></a>
+                    </div>
+                <?php }}else{ ?>
+
+                
                     <div class="btn-group">
                     <a href="dashboard.php?<?php
                             if(isset($_GET['sort'])) echo"sort=" . $_GET["sort"];?>                            
 "><button type="button" name="tri" value="all" class="btn btn-primary active">Tous</button></a>
-    <a href="dashboard.php?<?php if(isset($_GET['sort'])) echo"sort=" . $_GET["sort"] . "&";?>tri=1"><button type="button" name="tri" value="restau" class="btn btn-primary active">Se
-                                restaurer</button></a>
-                        <a href="dashboard.php?<?php if(isset($_GET['sort'])) echo"sort=" . $_GET["sort"] . "&";?>tri=2"><button type="button" name="tri" value="sport" class="btn btn-primary active">Faire
+    <a href="dashboard.php?<?php if(isset($_GET['sort'])) echo"sort=" . $_GET["sort"] . "&";?>tri=1"><button type="button" name="tri" value="restau" class="btn btn-primary">Se restaurer</button></a>
+                        <a href="dashboard.php?<?php if(isset($_GET['sort'])) echo"sort=" . $_GET["sort"] . "&";?>tri=2"><button type="button" name="tri" value="sport" class="btn btn-primary">Faire
                                 du sport</button></a>
-                        <a href="dashboard.php?<?php if(isset($_GET['sort'])) echo"sort=" . $_GET["sort"] . "&";?>tri=3"><button type="button" name="tri" value="sortir" class="btn btn-primary active">Sortir</button></a>
+                        <a href="dashboard.php?<?php if(isset($_GET['sort'])) echo"sort=" . $_GET["sort"] . "&";?>tri=3"><button type="button" name="tri" value="sortir" class="btn btn-primary">Sortir</button></a>
                     </div>
+                <?php } ?>
+
+
                 </div>
             </div>
 
