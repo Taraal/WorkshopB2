@@ -140,7 +140,7 @@ foreach($tabimpair as $key => $value){ ?>
 
         $all_groups = $user->get_all_groups();
 
-    var_dump($all_groups);
+  
 
 $i4 = 0;
 $i5 = 0;

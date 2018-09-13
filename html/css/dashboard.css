@@ -64,11 +64,20 @@ html{
     height: 45%;
     max-height: 170px;
     background-color: rgba(0, 0, 0, 0.3);
+    font-family: 'Coda Caption', sans-serif;
+
+}
+
+h1{
+  font-family: 'Allerta', sans-serif !important;
+  color: white !important;
+  margin-top: 30px !important;
 }
 
 .text-block h4{
   margin-top: 10%;
   margin-left: 10%;
+  font-size: 40px !important;
 }
 
 .boutonchoix{

@@ -58,12 +58,12 @@ function afficher_coeur($id_envent)
 
     <!-- font -->
     <link href="https://fonts.googleapis.com/css?family=Assistant|M+PLUS+1p|Pacifico" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Coda+Caption:800" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Allerta" rel="stylesheet">
 
 
     <!-- CSS -->
     <link rel="stylesheet" type="text/css" href="css/dashboard.css">
-    <link rel="stylesheet" type="text/css" href="css/mesevents.css">
-
     <title>Mes Events</title>
 </head>
 
@@ -92,9 +92,10 @@ function afficher_coeur($id_envent)
 }
 
     ?>
-    <div id="mes_events">
+    
     <div class="container">
     <div class="row">
+
     <div class="column">
                 <?php
                 foreach ($tabpair as $key => $value) {
@@ -145,7 +146,7 @@ function afficher_coeur($id_envent)
 } ?>
             </div>
     </div>
-</div></div>
+</div>
 
 
 </body>

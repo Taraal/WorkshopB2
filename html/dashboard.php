@@ -59,6 +59,7 @@ function afficher_coeur($id_envent)
 
     <!-- font -->
     <link href="https://fonts.googleapis.com/css?family=Assistant|M+PLUS+1p|Pacifico" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Coda+Caption:800" rel="stylesheet">
 
 
     <!-- CSS -->
