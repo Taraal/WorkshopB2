@@ -33,7 +33,9 @@ else{
 
 
 
-header('Location:dashboard.php');
+// header('Location:dashboard.php');
+header('Location: '.$_SERVER["HTTP_REFERER"]);
 
 
 ?>
+

@@ -28,14 +28,13 @@ function afficher_coeur($id_envent)
     $req->bindParam(':id_user', $_SESSION['id']);
     $req->execute();
     $result = $req->fetchall();
-    if (!$result){
-        $img= "<img class='Heart' src='medias/like_empty.png' onmouseover='this.src=`medias/like_full.png`'onmouseout='this.src=`medias/like_empty.png`'>";
-    }
-    else{
-        $img= "<img class='Heart' src='medias/like_full.png' onmouseover='this.src=`medias/like_empty.png`'onmouseout='this.src=`medias/like_full.png`'>";
+    if (!$result) {
+        $img = "<img class='Heart' src='medias/like_empty.png' onmouseover='this.src=`medias/like_full.png`'onmouseout='this.src=`medias/like_empty.png`'>";
+    } else {
+        $img = "<img class='Heart' src='medias/like_full.png' onmouseover='this.src=`medias/like_empty.png`'onmouseout='this.src=`medias/like_full.png`'>";
     }
     return $img;
-    
+
 }
 ?>
 <html>
@@ -69,6 +68,44 @@ function afficher_coeur($id_envent)
 
 <body>
     <?php include_once("navbar.php"); ?>
+    <?php 
+    $db = Database::connect();
+    $req = $db->prepare("SELECT * FROM evenements e join participe p on e.id_evenement=p.id_evenement where p.id_utilisateur=:id_user ");
+    $req->bindParam(':id_user', $_SESSION['id']);
+    $req->execute();
+    $result = $req->fetchall();
+    $i2 = 0;
+    $i3 = 0;
+    $tab = [];
+    for ($i = 0; $i < count($result); $i++) {
+        $tab[$i] = $result[$i];
+    }
+    ?>
+    <div class="column">
+                <?php
+                foreach ($tab as $key => $value) {
+                    ?>
+                <a href="aime_evenement.php?id_event=<?php echo $value['id_evenement']; ?>">
+                        <?php 
+                        $img = afficher_coeur($value['id_evenement']);
+                        echo $img; ?>
+                    </a>
+                <div class="no-gutter image">                    
+
+                    <a href="evenement.php?id=<?php echo $value['id_evenement']; ?>"> <img src="article/imagearticle/<?php echo $value['id_evenement']; ?>.png"
+                            alt="Norway" style="width:100%;">
+                    </a>
+                    <div class="text-block">
+                        <h4>
+                            <?php echo $value['nom']; ?>
+                        </h4>
+                    </div>
+                </div>
+
+                <?php 
+            } ?>
+    </div>
+
 
 
 </body>
