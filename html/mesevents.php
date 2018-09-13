@@ -62,6 +62,7 @@ function afficher_coeur($id_envent)
 
     <!-- CSS -->
     <link rel="stylesheet" type="text/css" href="css/dashboard.css">
+    <link rel="stylesheet" type="text/css" href="css/mesevents.css">
 
     <title>Mes Events</title>
 </head>
@@ -81,6 +82,7 @@ function afficher_coeur($id_envent)
         $tab[$i] = $result[$i];
     }
     ?>
+    <div id="mes_events">
     <div class="column">
                 <?php
                 foreach ($tab as $key => $value) {
@@ -105,7 +107,7 @@ function afficher_coeur($id_envent)
                 <?php 
             } ?>
     </div>
-
+    </div>
 
 
 </body>

@@ -135,20 +135,22 @@ for ($i = 0; $i < count($results); $i++) {
                 <?php
                     foreach ($tabpair as $key => $value) {
                 ?>
-                <a href="aime_evenement.php?id_event=<?php echo $value['id_evenement']; ?>">
-                        <?php 
-                        $img = afficher_coeur($value['id_evenement']);
-                        echo $img; ?>
-                    </a>
-                <div class="no-gutter image">                    
+                <div class="events">
+                    <a href="aime_evenement.php?id_event=<?php echo $value['id_evenement']; ?>">
+                            <?php 
+                            $img = afficher_coeur($value['id_evenement']);
+                            echo $img; ?>
+                        </a>
+                    <div class="no-gutter image">                    
 
-                    <a href="evenement.php?id=<?php echo $value['id_evenement']; ?>"> <img src="article/imagearticle/<?php echo $value['id_evenement']; ?>.png"
-                            alt="Norway" style="width:100%;">
-                    </a>
-                    <div class="text-block">
-                        <h4>
-                            <?php echo $value['nom']; ?>
-                        </h4>
+                        <a href="evenement.php?id=<?php echo $value['id_evenement']; ?>"> <img src="article/imagearticle/<?php echo $value['id_evenement']; ?>.png"
+                                alt="Norway" style="width:100%;">
+                        </a>
+                        <div class="text-block">
+                            <h4>
+                                <?php echo $value['nom']; ?>
+                            </h4>
+                        </div>
                     </div>
                 </div>
 
@@ -160,6 +162,7 @@ for ($i = 0; $i < count($results); $i++) {
                 <?php
                     foreach ($tabimpair as $key => $value) {
                 ?>
+                <div class="events">
                 <a href="aime_evenement.php?id_event=<?php echo $value['id_evenement']; ?>">
                         <?php 
                         $img = afficher_coeur($value['id_evenement']);
@@ -176,6 +179,7 @@ for ($i = 0; $i < count($results); $i++) {
                         </h4>
                     </div>
                 </div>
+                    </div>
 
                 <?php 
 } ?>
