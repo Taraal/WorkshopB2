@@ -77,7 +77,8 @@ function afficher_coeur($id_envent)
     $result = $req->fetchall();
     $i2 = 0;
     $i3 = 0;
-    $tab = [];
+    $tabpair = [];
+    $tabimpair=[];
 
 
     for ($i = 0; $i < count($result); $i++) {
@@ -105,7 +106,7 @@ function afficher_coeur($id_envent)
                     </a>
                 <div class="no-gutter image">                    
 
-                    <a href="evenement.php?id=<?php echo $value['id_evenement']; ?>"> <img src="article/imagearticle/<?php echo $value['id_evenement']; ?>.png"
+                    <a href="evenement.php?id=<?php echo $value['id_evenement']; ?>"> <img src="imagearticle/<?php echo $value['id_evenement']; ?>.png"
                             alt="Norway" style="width:100%;">
                     </a>
                     <div class="text-block">
@@ -130,7 +131,7 @@ function afficher_coeur($id_envent)
                     </a>
                 <div class="no-gutter image">                    
 
-                    <a href="evenement.php?id=<?php echo $value['id_evenement']; ?>"> <img src="article/imagearticle/<?php echo $value['id_evenement']; ?>.png"
+                    <a href="evenement.php?id=<?php echo $value['id_evenement']; ?>"> <img src="imagearticle/<?php echo $value['id_evenement']; ?>.png"
                             alt="Norway" style="width:100%;">
                     </a>
                     <div class="text-block">

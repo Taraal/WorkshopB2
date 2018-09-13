@@ -71,7 +71,7 @@ $req5->execute();
 
 
 
-header('Location:dashboard.php?id='.$idpersonne.'');
+header('Location:dashboard.php?sort=event&id='.$idpersonne.'');
 
 
 
