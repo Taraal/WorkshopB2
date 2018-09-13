@@ -103,7 +103,7 @@ if (isset($_SESSION['id'])) {
 
     <div class="col-3">
         <div class="boutonchoix">
-        <form method="post" id="forminscription" action="../commentairearticle.php "  enctype="multipart/form-data">
+        <form method="post" id="forminscription" action="../joingroupe.php "  enctype="multipart/form-data">
             <input type="hidden" name="idgroupe" value="<?php echo $_GET['groupe']; ?>">
             <button type="submit" class="btn btn-primary">Rejoindre groupe</button>
         </form>
@@ -118,13 +118,12 @@ if (isset($_SESSION['id'])) {
 
 if (isset($_GET["tri"])) {
 
-    $results = Evenements::get_events_groupe($user->get_id(), $_GET['tri'], $_GET['groupe']);
+    $results = Evenements::get_all_events_groupes_tri($_GET['groupe'], $_GET['tri']);
 
 }
 else { 
-    $results = Evenements::get_all_events_groupe($_GET['groupe']);
+    $results = Evenements::get_all_events_groupes($_GET['groupe']);
 }
-
 
 $i2 = 0;
 $i3 = 0;

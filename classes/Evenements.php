@@ -54,7 +54,7 @@ class Evenements {
 
 
     }
-
+/*
     public static function get_events_groupe($id_user,$tri, $groupe){
         $pdo = Database::connect();
 
@@ -75,7 +75,7 @@ class Evenements {
         return $statement->fetchAll(PDO::FETCH_ASSOC);
 
     }
-
+ */
 
     public static function get_all_articles(){
 
@@ -101,5 +101,22 @@ class Evenements {
 
     }
 
+    public static function get_all_events_groupes($id_g){
 
+        $pdo = database::connect();
+        $statement = $pdo->prepare("SELECT * from evenements e JOIN utilisateurs u ON u.id_utilisateur=e.id_proprio JOIN membres m ON m.id_utilisateur=u.id_utilisateur JOIN groupes g ON g.id_groupe=m.id_groupe WHERE m.id_groupe = :id_g AND e.id_proprio=m.id_utilisateur");
+        $statement->execute(array(':id_g'=>$id_g));
+
+        return $statement->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+
+    public static function get_all_events_groupes_tri($id_g, $tri){
+
+        $pdo = database::connect();
+        $statement = $pdo->prepare("SELECT * from evenements e JOIN utilisateurs u ON u.id_utilisateur=e.id_proprio JOIN membres m ON m.id_utilisateur=u.id_utilisateur JOIN groupes g ON g.id_groupe=m.id_groupe WHERE m.id_groupe = :id_g AND e.id_proprio=m.id_utilisateur AND e.id_theme = :tri");
+        $statement->execute(array(':id_g'=>$id_g, ':tri'=>$tri));
+
+        return $statement->fetchAll(PDO::FETCH_ASSOC);
+    }
 }
