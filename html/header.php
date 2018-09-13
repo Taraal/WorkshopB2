@@ -17,7 +17,7 @@ $pseudo=$_SESSION['prenom'].' '.$_SESSION['nom'];
 
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <a class="navbar-brand" href="dashboard.php">Patatoïde</a>
+  <a class="navbar-brand" href="dashboard.php?sort=event">Patatoïde</a>
   <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navb">
     <span class="navbar-toggler-icon"></span>
   </button>
