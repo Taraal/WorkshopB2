@@ -142,11 +142,12 @@ $tabpair = [];
     foreach($tabpair as $key => $value){
 ?>
         <div class="no-gutter image">
+        
+        <img class="Heart" src="medias/like_empty.png" onmouseover="this.src='medias/like_full.png'"onmouseout="this.src='medias/like_empty.png'">
         <img src="article/imagearticle/<?php echo $value['id_evenement']; ?>.png" alt="Norway" style="width:100%;">
         <div class="text-block"> 
         <h4><?php echo $value['nom']; ?></h4>
         </div>
-        <img class="Heart" src="medias/like_empty.png" onmouseover="this.src='medias/like_full.png'"onmouseout="this.src='medias/like_empty.png'">
     </div>
 
 <?php  } ?>
@@ -157,6 +158,8 @@ $tabpair = [];
     foreach($tabimpair as $key => $value){
 ?>
         <div class="no-gutter image">
+    
+        <img class="Heart" src="medias/like_empty.png" onmouseover="this.src='medias/like_full.png'"onmouseout="this.src='medias/like_empty.png'">
         <img src="article/imagearticle/<?php echo $value['id_evenement']; ?>.png" alt="Norway" style="width:100%;">
         <div class="text-block"> 
         <h4><?php echo $value['nom']; ?></h4>

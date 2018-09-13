@@ -1,0 +1,36 @@
+.menu{
+	background-color: transparent !important;
+	border: solid 1px transparent !important;
+	text-decoration: none;
+	color:white !important;
+}
+
+.menu:hover{
+	background-color: transparent !important;
+	border: solid 1px transparent !important;
+	text-decoration: none;
+}
+
+.menu:active{
+	border: solid 1px transparent !important;
+	border: solid 1px transparent !important;
+	text-decoration: none;
+}
+
+.menu:focus{
+	background-color: transparent !important;
+	border: solid 1px transparent !important;
+	text-decoration: none;
+}
+
+.btn-primary{
+	background-color: transparent !important;
+	border: solid 1px transparent !important;
+	text-decoration: none;
+}
+
+.dropdown-item:active{
+	background-color: transparent !important;
+	border: solid 1px transparent !important;
+}
+

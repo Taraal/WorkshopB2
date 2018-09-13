@@ -7,7 +7,7 @@ class config
     const PORT = "3306";
     const DBNAME = "workshopb21";
     const USER = "root";
-    const PASSWORD = "modepasse1"; // A CHANGER // 
+    const PASSWORD = ""; // A CHANGER // 
     
 }
 
@@ -33,9 +33,14 @@ class database
 
             if ($result[0]['mdp']==$password){
                 $id= $result[0]['id_utilisateur'];
+                $nom=$result[0]['nom'];
+                $prenom=$result[0]['prenom'];
+
                 session_start();
 
                 $_SESSION['id'] = $id;
+                $_SESSION['nom']=$nom;
+                $_SESSION['prenom']=$prenom;
 
                 header("Location: dashboard.php");
             }
