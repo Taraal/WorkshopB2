@@ -170,7 +170,7 @@ for ($i = 0; $i < count($results); $i++) {
                     </a>
                 <div class="no-gutter image">
 
-                    <a href="evenement.php?id=<?php echo $value['id_evenement']; ?>">
+                    <a href="article/evenement.php?id=<?php echo $value['id_evenement']; ?>">
                         <img src="article/imagearticle/<?php echo $value['id_evenement']; ?>.png" alt="Norway" style="width:100%;">
                     </a>
                     <div class="text-block">

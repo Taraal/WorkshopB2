@@ -102,6 +102,12 @@ if (isset($_SESSION['id'])) {
     </div>
 
     <div class="col-3">
+        <div class="boutonchoix">
+        <form method="post" id="forminscription" action="../commentairearticle.php "  enctype="multipart/form-data">
+            <input type="hidden" name="idgroupe" value="<?php echo $_GET['groupe']; ?>">
+            <button type="submit" class="btn btn-primary">Rejoindre groupe</button>
+        </form>
+    </div>
     </div>
 
 </div>
