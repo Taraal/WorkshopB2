@@ -68,11 +68,11 @@ if (isset($_SESSION['id'])) {
 
 <div class="dropdown my-2 my-lg-0">
   <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
-    Baptiste PAPA
+        <?php echo $user->get_nom() , " ", $user->get_prenom(); ?>
   </button>
   <div class="dropdown-menu">
-    <a class="dropdown-item" href="#">Mon profil</a>
-    <a class="dropdown-item" href="#">Se deconnecter</a>
+    <a class="dropdown-item" href="profil.php">Mon profil</a>
+    <a class="dropdown-item" href="index.php">Se deconnecter</a>
   </div>
 </div>
 
