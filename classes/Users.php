@@ -37,7 +37,7 @@ Class User {
         $pdo = database::connect();
 
         $statement = $pdo->prepare("INSERT INTO groupes (id_groupe, id_proprio, nom, description) VALUES (NULL, :id_proprio, :nom, :desc)");
-        $statement->execute(array(':id_proprio'=>$this->id, ':nom'=>$nom, ':description'=>$description));
+        $statement->execute(array(':id_proprio'=>$this->id, ':nom'=>$nom, ':desc'=>$description));
 
         return $id_g = $pdo->lastInsertId();
     }

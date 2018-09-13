@@ -56,8 +56,9 @@
             <div class="container creer">
             <h3>Creer groupe</h3>
             <form method="post" id="forminscription" action="creergroupe.php" enctype="multipart/form-data">
-                <input class="form-control event" name="Family_Name" type="text" id="Family_Name" placeholder="Nom du Groupe" /><br>
-                <input class="form-control event" name="Family_Name" type="text" id="Family_Name" placeholder="Description du groupe" style="height:50px;" /><br>
+                <input class="form-control event" name="nomgroupe" type="text" id="Family_Name" placeholder="Nom du Groupe" /><br>
+                <input class="form-control event" name="descgroupe" type="text" id="Family_Name" placeholder="Description du groupe" style="height:50px;" /><br>
+                <input type="hidden" name="id_user" value="<?php echo  $user->get_id(); ?>">
                 <button id="boutton_creation" type="submit" class="btn btn-success">Creer</button>
             </form>
 

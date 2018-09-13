@@ -65,7 +65,7 @@ include_once "../../classes/Database.php";
 
 <?php
     $db = Database::connect();
-    $req = $db->prepare("SELECT * from evenements WHERE id_evenement=9");
+    $req = $db->prepare("SELECT * from evenements WHERE id_evenement=8");
     $req->execute();
 
     
