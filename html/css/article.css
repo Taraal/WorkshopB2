@@ -54,3 +54,15 @@ body{
 .center{
   text-align: center
 }
+
+.commenta{
+  margin-bottom: 15px;
+  margin-top: 15px;
+  min-height:100px;
+}
+
+hr{
+  margin-top:30px !important;
+  margin-bottom: 25px !important;
+}
+
