@@ -64,7 +64,7 @@ ini_set("display_errors",1);
                 <input class="form-control event" name="nomgroupe" type="text" id="Family_Name" placeholder="Nom du Groupe" /><br>
                 <input class="form-control event" name="descgroupe" type="text" id="Family_Name" placeholder="Description du groupe" style="height:50px;" /><br>
                 <input type="hidden" name="id_user" value="<?php echo  $user->get_id(); ?>">
-                <button id="boutton_creation" type="submit" class="btn btn-success">Creer</button>
+                <button id="boutton_creation" type="submit" class="btn btn-success">Créer</button>
             </form>
 
             </div>

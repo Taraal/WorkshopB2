@@ -81,11 +81,7 @@ Class User {
         
         $pdo = database::connect();
 
-        $statement= $pdo->prepare("SELECT * from groupes g 
-JOIN membres m 
-	on m.id_groupe=g.id_groupe 
-    WHERE NOT EXISTS 
-    	(SELECT id_utilisateur from membres where id_utilisateur = :id_u)");
+        $statement= $pdo->prepare("SELECT DISTINCT * from groupes g JOIN membres m ON m.id_groupe=g.id_groupe WHERE id_utilisateur != :id_u AND id_proprio != :id_u");
         $statement->execute(array(':id_u'=>$this->id));
 
         $result = $statement->fetchAll(PDO::FETCH_ASSOC);
